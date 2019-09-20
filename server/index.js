@@ -4,6 +4,8 @@ const app = express();
 const massive = require('massive');
 const session = require('express-session');
 
+//controllers
+const {getUser, register, login, logout} = require('./controllers/authController.js');
 
 //dotenv
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
@@ -28,7 +30,10 @@ massive(CONNECTION_STRING)
 })
 
 //auth endpoints
-
+app.get('/auth/user', getUser)
+app.post('/auth/register', register)
+app.post('/auth/login', login)
+app.post('/auth/logout', logout)
 
 //api endpoints
 
