@@ -1,8 +1,32 @@
 import React, { Component } from 'react'
 import "./Login.sass"
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {loginUser} from '../../redux/reducers/userReducer';
 
-export default class Login extends Component {
+class Login extends Component {
+    constructor(){
+        super();
+        this.state = {
+            username: '',
+            password: ''
+        }
+    }
+
+    handleSubmit = () => {
+        const {username, password} = this.state;
+        const {loginUser} = this.props;
+        loginUser({username, password});
+    }
+
+    handleInput = e => {
+        this.setState({[e.target.name]: e.target.value});
+    }
+
     render() {
+        if(this.props.user_id){
+            return <Redirect to='/browse/live'/>
+        }
         return (
             <div className="register-main">
                 <section className="register-title">
@@ -12,13 +36,20 @@ export default class Login extends Component {
                     <section className="section-1-register">
                         <div className="register-left">
                             <h2>Username</h2>
-                            <input></input>
+                            <input
+                                name="username"
+                                onChange={this.handleInput}
+                            ></input>
                             <h2>Password</h2>
-                            <input type="password"></input>
+                            <input 
+                                type="password"
+                                name='password'
+                                onChange={this.handleInput}
+                            ></input>
                         </div>
                     </section>
                     <section className="section-2-register section-2-login">
-                        <button>Login</button>
+                        <button onClick={this.handleSubmit}>Login</button>
                         <h1>Don't have an account? Sign up here: <a href="/#/register">Register</a></h1>
                     </section>
                 </section>
@@ -26,3 +57,13 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapStateToProps = reduxState => {
+    return {
+        user_id: reduxState.userReducer.user_id
+    }
+}
+
+export default connect(mapStateToProps, {
+    loginUser
+})(Login)
