@@ -26,6 +26,7 @@ const register = async (req, res) => {
             username: newUser[0].username,
             favorite_color: newUser[0].favorite_color
         };
+        
         res.status(200).json(req.session.user);
     }
 
@@ -52,6 +53,7 @@ const login = async (req, res) => {
                 username: foundUser[0].username,
                 favorite_color: foundUser[0].favorite_color
             }
+            console.log(req.session.user)
             res.status(200).json(req.session.user);
         }
     }
