@@ -1,0 +1,38 @@
+.header-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+.section-1 img {
+  max-width: 4vw;
+  margin: 0 10px 0 50px;
+}
+
+.section-2 button {
+  border: none;
+  border-radius: 10px;
+  width: 6vw;
+  height: 4vh;
+  color: white;
+  background: #7DE38D;
+  margin-right: 50px;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.section-2 button:hover {
+  border: 1px solid white;
+}
+
+#logout-button {
+  background: red;
+}
+/*# sourceMappingURL=Header.css.map */

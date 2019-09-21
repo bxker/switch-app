@@ -1,0 +1,141 @@
+.register-main {
+  height: 80vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Exo', sans-serif;
+}
+
+.register-title {
+  color: white;
+  font-size: 2rem;
+}
+
+.switch-green {
+  font-family: 'Roboto', sans-serif;
+  color: #7DE38D;
+}
+
+.green-box {
+  width: 60%;
+  height: 50vh;
+  margin-bottom: 20vh;
+  background: #7DE38D;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #00242B;
+}
+
+.section-1-register {
+  height: 30vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.section-2-register {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #00242B;
+}
+
+.section-2-register a {
+  color: #00242B;
+}
+
+.section-2-register a:hover {
+  color: white;
+}
+
+.section-2-register button {
+  border: none;
+  border-radius: 10px;
+  width: 10vw;
+  height: 5vh;
+  cursor: pointer;
+  background: #00242B;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.register-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.register-left input {
+  width: 15vw;
+  height: 3vh;
+  border: none;
+  border-radius: 5px;
+  color: #00242B;
+  font-family: 'Roboto', sans-serif;
+}
+
+.register-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.register-right input {
+  width: 15vw;
+  height: 3vh;
+  border: none;
+  border-radius: 5px;
+  color: #00242B;
+  font-family: 'Roboto', sans-serif;
+}
+/*# sourceMappingURL=Register.css.map */
