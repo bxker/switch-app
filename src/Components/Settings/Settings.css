@@ -1,0 +1,109 @@
+.settings-main {
+  height: 60vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings-section-1 {
+  width: 50%;
+  height: 20%;
+  font-family: 'Exo', sans-serif;
+  font-size: 2rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.settings-section-1 h1 {
+  font-size: 2.5rem;
+}
+
+.settings-section-2 {
+  width: 50%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 1.25vw 5vh 0;
+}
+
+.settings-section-2 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.settings-section-2 div h2 {
+  font-size: 1.25rem;
+  width: 12vw;
+  text-align: center;
+}
+
+.settings-section-2 div input {
+  border: none;
+  border-radius: 5px;
+  width: 20vw;
+  height: 4vh;
+  marigin-right: 3vw;
+}
+
+.settings-section-2 div button {
+  border: none;
+  border-radius: 10px;
+  width: 10vw;
+  height: 4vh;
+  color: white;
+  font-size: 1.15rem;
+  background: #7DE38D;
+  cursor: pointer;
+}
+
+#delete-container h2 {
+  margin-left: 5vw;
+}
+
+#delete-container button {
+  background: red;
+  margin-right: 5vw;
+}
+/*# sourceMappingURL=Settings.css.map */
