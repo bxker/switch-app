@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Register.sass';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import {registerUser} from '../../redux/reducers/userReducer';
 
 class Register extends Component {
@@ -17,7 +17,8 @@ class Register extends Component {
         }
     }
 
-    handleSubmit = () => {
+    handleSubmit = e => {
+        e.preventDefault();
         const {first_name, last_name, username, email, password, favorite_color} = this.state;
         const {registerUser} = this.props;
         registerUser({first_name, last_name, username, email, password, favorite_color});
@@ -39,7 +40,8 @@ class Register extends Component {
                 <section className="register-title">
                     <h1>Sign up for <span className="switch-green"> Switch</span> </h1>
                 </section>
-                <section className="green-box">
+                <form className="green-box">
+                    <Link to="/"><span id='cancel-x'>Cancel</span></Link>
                     <section className="section-1-register">
                         <div className="register-left">
                             <h2>First Name</h2>
@@ -81,7 +83,7 @@ class Register extends Component {
                         <button onClick={this.handleSubmit}>Sign Up</button>
                         <h1>Already have an account? <a href="/#/login">Login</a></h1>
                     </section>
-                </section>
+                </form>
             </div>
         )
     }

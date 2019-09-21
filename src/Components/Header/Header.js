@@ -10,14 +10,12 @@ class Header extends Component {
     }
 
     render(){
-        
         return (
             <div className="header-main">
                 <section className="section-1">
-                    <img src="https://i.imgur.com/5s6hSmS.png" alt="logo"></img>
+                    <Link to="/"><img src="https://i.imgur.com/5s6hSmS.png" alt="logo"></img></Link>
                 </section>
                 <section className="section-2">
-                    <Link to="/"><button>Home</button></Link>
                     {this.props.user_id ?
                         <Link to="/browse/live"><button>Browse</button></Link> : null}
                     {this.props.user_id ?

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./Login.sass"
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import {loginUser} from '../../redux/reducers/userReducer';
 
 class Login extends Component {
@@ -13,7 +13,8 @@ class Login extends Component {
         }
     }
 
-    handleSubmit = () => {
+    handleSubmit = e => {
+        e.preventDefault()
         const {username, password} = this.state;
         const {loginUser} = this.props;
         loginUser({username, password});
@@ -32,27 +33,30 @@ class Login extends Component {
                 <section className="register-title">
                     <h1>Log In to <span className="switch-green"> Switch</span> </h1>
                 </section>
-                <section className="green-box">
-                    <section className="section-1-register">
-                        <div className="register-left">
-                            <h2>Username</h2>
-                            <input
-                                name="username"
-                                onChange={this.handleInput}
-                            ></input>
-                            <h2>Password</h2>
-                            <input 
-                                type="password"
-                                name='password'
-                                onChange={this.handleInput}
-                            ></input>
-                        </div>
+                    <section className="green-box">
+                        <Link to="/"><span id='cancel-x'>Cancel</span></Link>
+                        <form>
+                        <section className="section-1-register">
+                            <div className="register-left">
+                                <h2>Username</h2>
+                                <input
+                                    name="username"
+                                    onChange={this.handleInput}
+                                ></input>
+                                <h2>Password</h2>
+                                <input 
+                                    type="password"
+                                    name='password'
+                                    onChange={this.handleInput}
+                                ></input>
+                            </div>
+                        </section>
+                        <section className="section-2-register section-2-login">
+                            <button onClick={this.handleSubmit} onKeyPress={this.handleKeyPress}>Login</button>
+                            <h1>Don't have an account? Sign up here: <a href="/#/register">Register</a></h1>
+                        </section>
+                        </form>
                     </section>
-                    <section className="section-2-register section-2-login">
-                        <button onClick={this.handleSubmit}>Login</button>
-                        <h1>Don't have an account? Sign up here: <a href="/#/register">Register</a></h1>
-                    </section>
-                </section>
             </div>
         )
     }
