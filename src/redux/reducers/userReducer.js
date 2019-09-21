@@ -41,6 +41,7 @@ export function getSession() {
  }
  
  export function logoutUser() {
+    console.log('hit')
     axios.post('/auth/logout')
     return {
         type: LOGOUT_USER
