@@ -6,7 +6,7 @@ const session = require('express-session');
 
 //controllers
 const {getUser, register, login, logout} = require('./controllers/authController.js');
-const {updateUsername, updateStreamTitle, updateTwitchUsername, deleteUser} = require('./controllers/settingsController');
+const {updateUsername, updateStreamTitle, updateTwitchUsername, updateFavoriteColor, deleteUser} = require('./controllers/settingsController');
 //dotenv
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 
@@ -41,6 +41,8 @@ app.put('/auth/settings/user', updateUsername);
 app.put('/auth/settings/streamtitle', updateStreamTitle);
 //update twitch username
 app.put('/auth/settings/twitch', updateTwitchUsername);
+//update favorite color
+app.put('/auth/settings/color', updateFavoriteColor)
 //delete account
 app.delete('/auth/settings/user', deleteUser);
 

@@ -16,12 +16,25 @@ const updateStreamTitle = async (req, res) => {
     const {stream_title} = req.body;
     const {user_id} = req.session.user;
     await db.settings.updateStreamTitle(stream_title, user_id);
-    res.sendStatus(200)
+    res.sendStatus(200);
 }
 
-const updateTwitchUsername = (req, res) => {
+const updateTwitchUsername = async (req, res) => {
     const db = req.app.get('db');
+    const {twitch_username} = req.body;
+    const {user_id} = req.session.user;
+    await db.settings.updateTwitchUsername(twitch_username, user_id);
+    res.sendStatus(200);
 }
+
+const updateFavoriteColor = async (req, res) => {
+    const db = req.app.get('db');
+    const {favorite_color} = req.body;
+    const {user_id} = req.session.user;
+    await db.settings.updateFavoriteColor(favorite_color, user_id);
+    res.sendStatus(200);
+}
+
 const deleteUser = (req, res) => {
     const db = req.app.get('db');
 }
@@ -30,5 +43,6 @@ module.exports = {
     updateUsername,
     updateStreamTitle,
     updateTwitchUsername,
+    updateFavoriteColor,
     deleteUser
 }
