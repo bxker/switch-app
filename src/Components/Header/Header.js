@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './Header.sass';
 export default function Header() {
     return (
@@ -7,8 +8,7 @@ export default function Header() {
                 <img src="https://i.imgur.com/5s6hSmS.png" alt="logo"></img>
             </section>
             <section className="section-2">
-                <button>Login</button>
-                <button>Sign Up</button>
+                <Link to="/"><button>Home</button></Link>
             </section>
 
         </div>
