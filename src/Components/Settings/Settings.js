@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Settings.sass';
+import {connect} from 'react-redux';
+import {} from '../../redux/reducers/userReducer';
 
 class Settings extends Component {
     render() {
@@ -7,7 +9,7 @@ class Settings extends Component {
             <div className="settings-main">
                 <section className="settings-section-1">
                     <h1>Settings</h1>
-                    <h2>Welcome, </h2>
+                    <h2>Welcome, <span className="username-color" style={{color: this.props.favorite_color}}>{this.props.username}</span>!</h2>
                 </section>
                 <section className="settings-section-2">
                     <div className="div-1">
@@ -35,4 +37,12 @@ class Settings extends Component {
     }
 }
 
-export default Settings
+const mapStateToProps = reduxState => {
+    return{
+        user_id: reduxState.userReducer.user_id,
+        username: reduxState.userReducer.username,
+        favorite_color: reduxState.userReducer.favorite_color
+    }
+}
+
+export default connect(mapStateToProps, {})(Settings)

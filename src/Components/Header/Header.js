@@ -19,6 +19,8 @@ class Header extends Component {
                 <section className="section-2">
                     <Link to="/"><button>Home</button></Link>
                     {this.props.user_id ?
+                        <Link to="/browse/live"><button>Browse</button></Link> : null}
+                    {this.props.user_id ?
                         <Link to='/user/settings'><button>Settings</button></Link> : null}
                     {this.props.user_id ? 
                         <Link to='/'><button id="logout-button" onClick={this.handleSubmit}>Logout</button></Link> : null}

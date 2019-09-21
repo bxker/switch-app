@@ -39,6 +39,7 @@
 
 .settings-section-1 h1 {
   font-size: 2.5rem;
+  text-decoration: underline;
 }
 
 .settings-section-2 {
@@ -105,5 +106,10 @@
 #delete-container button {
   background: red;
   margin-right: 5vw;
+}
+
+.username-color {
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 3px #FFFFFF;
 }
 /*# sourceMappingURL=Settings.css.map */
