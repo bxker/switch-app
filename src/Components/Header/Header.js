@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './Header.sass';
 import {connect} from 'react-redux';
 import {logoutUser} from '../../redux/reducers/userReducer';
