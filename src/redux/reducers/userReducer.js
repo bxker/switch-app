@@ -7,15 +7,13 @@ const initialState = {
     first_name: '',
     last_name: '',
     email: '',
-    favorite_color: '',
-    stream_title: '',
-    twitch_username: ''
+    favorite_color: ''
 }
 
-const GET_SESSION = 'GET_SESSION';
-const REGISTER_USER = 'REGISTER_USER';
-const LOGIN_USER = 'LOGIN_USER';
-const LOGOUT_USER = 'LOGOUT_USER';
+export const GET_SESSION = 'GET_SESSION';
+export const REGISTER_USER = 'REGISTER_USER';
+export const LOGIN_USER = 'LOGIN_USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 
 
 export function getSession() {

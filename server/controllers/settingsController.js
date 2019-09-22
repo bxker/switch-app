@@ -3,8 +3,8 @@ const updateUsername = async (req, res) => {
     const {username} = req.body;
     const {user_id} = req.session.user;
     try {
-        await db.settings.updateUsername(username, user_id);
-        res.sendStatus(200);
+        const updatedUser = await db.settings.updateUsername(username, user_id);
+        res.status(200).json(updatedUser[0]);
     }
     catch{
         res.status(409).json('Username taken!')
