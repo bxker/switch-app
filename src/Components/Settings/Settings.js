@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Settings.sass';
 import {connect} from 'react-redux';
-import {getSession, updateUsername, updateStreamTitle, updateTwitchUsername} from '../../redux/reducers/userReducer';
+import {getSession, updateUsername, updateStreamTitle, updateTwitchUsername, updateFavoriteColor, deleteAccount} from '../../redux/reducers/userReducer';
 
 class Settings extends Component {
     constructor(){
@@ -34,7 +34,28 @@ class Settings extends Component {
         const {twitch_username} = this.state;
         const {updateTwitchUsername} = this.props;
         updateTwitchUsername({twitch_username});
+        alert(`Twitch username has been updated to: ${twitch_username}`);
     }
+
+    handleUpdateFavoriteColor = () => {
+        const {favorite_color} = this.state;
+        const {updateFavoriteColor} = this.props;
+        updateFavoriteColor({favorite_color});
+        alert(`Favorite color has been updated to: ${favorite_color}`);
+    }
+
+    handleDeleteAccount = () => {
+        const {deleteAccount} = this.props;
+        let answer = prompt('Are you sure you want to delete your account? If so, type DELETE. If this was a mistake, type anything else and click ok.')
+        console.log(answer)
+        if(answer.toUpperCase() === 'DELETE'){
+            deleteAccount();
+        }else{
+            return;
+        }
+    }
+
+    //handle input text
     handleChange = e => {
         console.log(e.target.value)
         this.setState({[e.target.name]: e.target.value})
@@ -78,11 +99,11 @@ class Settings extends Component {
                             name="favorite_color"
                             onChange={this.handleChange}
                         ></input>
-                        <button>Submit</button>
+                        <button onClick={this.handleUpdateFavoriteColor}>Submit</button>
                     </div>
                     <div id="delete-container">
                         <h2>Delete Account:</h2>
-                        <button>Delete</button>
+                        <button onClick={this.handleDeleteAccount}>Delete</button>
                     </div>
                 </section>
             </div>
@@ -104,5 +125,7 @@ export default connect(mapStateToProps, {
     updateUsername,
     getSession,
     updateStreamTitle,
-    updateTwitchUsername
+    updateTwitchUsername,
+    updateFavoriteColor,
+    deleteAccount
 })(Settings)

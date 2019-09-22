@@ -12,6 +12,7 @@ const initialState = {
     twitch_username: ''
 }
 
+//const strings
 const GET_SESSION = 'GET_SESSION';
 const REGISTER_USER = 'REGISTER_USER';
 const LOGIN_USER = 'LOGIN_USER';
@@ -19,9 +20,10 @@ const LOGOUT_USER = 'LOGOUT_USER';
 const UPDATE_USERNAME = 'UPDATE_USERNAME';
 const UPDATE_STREAM_TITLE = 'UPDATE_STREAM_TITLE';
 const UPDATE_TWITCH_USERNAME = 'UPDATE_TWITCH_USERNAME';
-// const UPDATE_FAVORITE_COLOR = 'UPDATE_FAVORITE_COLOR';
-// const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
+const UPDATE_FAVORITE_COLOR = 'UPDATE_FAVORITE_COLOR';
+const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 
+//functions
 export function getSession() {
     return {
         type: GET_SESSION,
@@ -73,15 +75,18 @@ export function updateTwitchUsername(twitch){
     }
 }
 
-export function updateFavoriteColor(){
+export function updateFavoriteColor(color){
     return{
-        
+        type: UPDATE_FAVORITE_COLOR,
+        payload: axios.put('/auth/settings/color', color)
     }
 }
 
 export function deleteAccount(){
+    console.log('hit')
     return{
-        
+        type: DELETE_ACCOUNT,
+        payload: axios.delete('/auth/settings/user')
     }
 }
 
@@ -151,6 +156,24 @@ export default function reducer(state = initialState, action){
             return{
                 ...state,
                 twitch_username: payload.data.twitch_username
+            }
+        case `${UPDATE_FAVORITE_COLOR}_FULFILLED`:
+            return{
+                ...state,
+                favorite_color: payload.data.favorite_color
+            }
+        case `${DELETE_ACCOUNT}_FULFILLED`:
+            console.log('hit')
+            return{
+                ...state,
+                user_id: null,
+                username: '',
+                first_name: '',
+                last_name: '',
+                email: '',
+                favorite_color: '',
+                stream_title: '',
+                twitch_username: ''
             }
         default: return state;
     }
