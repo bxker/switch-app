@@ -35,8 +35,11 @@ const updateFavoriteColor = async (req, res) => {
     res.sendStatus(200);
 }
 
-const deleteUser = (req, res) => {
+const deleteUser = async (req, res) => {
     const db = req.app.get('db');
+    const {user_id} = req.session.user;
+    await db.settings.deleteUser(user_id);
+    res.sendStatus(200);
 }
 
 module.exports = {
