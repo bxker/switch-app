@@ -38,7 +38,8 @@ export default function reducer(state = initialState, action){
         case `${UPDATE_USERNAME}_FULFILLED`:
             console.log(payload.data)
             return{
-                ...state
+                ...state,
+                username: payload.data.username
             }
         default: return state
     }
