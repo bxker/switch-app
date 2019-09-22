@@ -7,14 +7,20 @@ const initialState = {
     first_name: '',
     last_name: '',
     email: '',
-    favorite_color: ''
+    favorite_color: '',
+    stream_title: '',
+    twitch_username: ''
 }
 
 const GET_SESSION = 'GET_SESSION';
 const REGISTER_USER = 'REGISTER_USER';
 const LOGIN_USER = 'LOGIN_USER';
 const LOGOUT_USER = 'LOGOUT_USER';
-
+const UPDATE_USERNAME = 'UPDATE_USERNAME';
+const UPDATE_STREAM_TITLE = 'UPDATE_STREAM_TITLE';
+const UPDATE_TWITCH_USERNAME = 'UPDATE_TWITCH_USERNAME';
+// const UPDATE_FAVORITE_COLOR = 'UPDATE_FAVORITE_COLOR';
+// const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 
 export function getSession() {
     return {
@@ -39,13 +45,47 @@ export function getSession() {
  }
  
  export function logoutUser() {
-    console.log('hit')
     axios.post('/auth/logout')
     return {
         type: LOGOUT_USER
     }
  }
 
+export function updateUsername(user){
+    return{
+        type: UPDATE_USERNAME,
+        payload: axios.put('/auth/settings/user', user)
+        
+    }
+}
+
+export function updateStreamTitle(title){
+    return{
+        type: UPDATE_STREAM_TITLE,
+        payload: axios.put('/auth/settings/streamtitle', title)
+    }
+}
+
+export function updateTwitchUsername(twitch){
+    return{
+        type: UPDATE_TWITCH_USERNAME,
+        payload: axios.put('/auth/settings/twitch', twitch)
+    }
+}
+
+export function updateFavoriteColor(){
+    return{
+        
+    }
+}
+
+export function deleteAccount(){
+    return{
+        
+    }
+}
+
+//reducer
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
 
@@ -96,6 +136,21 @@ export default function reducer(state = initialState, action){
                 favorite_color: '',
                 stream_title: '',
                 twitch_username: ''
+            }
+        case `${UPDATE_USERNAME}_FULFILLED`:
+            return{
+                ...state,
+                username: payload.data.username
+            }
+        case `${UPDATE_STREAM_TITLE}_FULFILLED`:
+            return{
+                ...state,
+                stream_title: payload.data.stream_title
+            }
+        case `${UPDATE_TWITCH_USERNAME}_FULFILLED`:
+            return{
+                ...state,
+                twitch_username: payload.data.twitch_username
             }
         default: return state;
     }

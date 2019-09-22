@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Settings.sass';
 import {connect} from 'react-redux';
-import {updateUsername} from '../../redux/reducers/settingsReducer';
-import {getSession} from '../../redux/reducers/userReducer';
+import {getSession, updateUsername, updateStreamTitle, updateTwitchUsername} from '../../redux/reducers/userReducer';
 
 class Settings extends Component {
     constructor(){
@@ -18,13 +17,26 @@ class Settings extends Component {
         this.props.getSession();
     }
     handleUpdateUsername = () => {
-        const {username} = this.state
-        const {updateUsername} = this.props
-        updateUsername({username})
-        alert(`Username Updated to ${this.state.username}`)
+        const {username} = this.state;
+        const {updateUsername} = this.props;
+        updateUsername({username});
+        alert(`Username Updated to ${username}`);
     }
 
+    handleUpdateStreamTitle = () => {
+        const {stream_title} = this.state;
+        const {updateStreamTitle} = this.props;
+        updateStreamTitle({stream_title});
+        alert(`Stream title has been updated to: ${stream_title}`)
+    }
+
+    handleUpdateTwitchUsername = () => {
+        const {twitch_username} = this.state;
+        const {updateTwitchUsername} = this.props;
+        updateTwitchUsername({twitch_username});
+    }
     handleChange = e => {
+        console.log(e.target.value)
         this.setState({[e.target.name]: e.target.value})
     }
 
@@ -50,15 +62,15 @@ class Settings extends Component {
                             name="stream_title"
                             onChange={this.handleChange}
                         ></input>
-                        <button>Submit</button>
+                        <button onClick={this.handleUpdateStreamTitle}>Submit</button>
                     </div>
                     <div className='div-3'>
-                        <h2>Add Twitch Username:</h2>
+                        <h2>Change Twitch Username:</h2>
                         <input
                             name="twitch_username"
                             onChange={this.handleChange}
                         ></input>
-                        <button>Submit</button>
+                        <button onClick={this.handleUpdateTwitchUsername}>Submit</button>
                     </div>
                     <div className="div-4">
                         <h2>Change Favorite Color:</h2>
@@ -82,11 +94,15 @@ const mapStateToProps = reduxState => {
     return{
         user_id: reduxState.userReducer.user_id,
         username: reduxState.userReducer.username,
-        favorite_color: reduxState.userReducer.favorite_color
+        favorite_color: reduxState.userReducer.favorite_color,
+        stream_title: reduxState.userReducer.stream_title,
+        twitch_username: reduxState.userReducer.twitch_username
     }
 }
 
 export default connect(mapStateToProps, {
     updateUsername,
-    getSession
+    getSession,
+    updateStreamTitle,
+    updateTwitchUsername
 })(Settings)

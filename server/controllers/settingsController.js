@@ -15,8 +15,8 @@ const updateStreamTitle = async (req, res) => {
     const db = req.app.get('db');
     const {stream_title} = req.body;
     const {user_id} = req.session.user;
-    await db.settings.updateStreamTitle(stream_title, user_id);
-    res.sendStatus(200);
+    const updatedUser = await db.settings.updateStreamTitle(stream_title, user_id);
+    res.status(200).json(updatedUser[0]);
 }
 
 const updateTwitchUsername = async (req, res) => {
