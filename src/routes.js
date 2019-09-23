@@ -15,6 +15,6 @@ export default (
         <Route path="/login" component={Login} />
         <Route path="/browse/live" component={BrowseLive} />
         <Route path="/user/settings" component={Settings} />
-        <Route path="/profile" component={Profile}/>
+        <Route path="/:username" component={Profile}/>
     </Switch>
 )

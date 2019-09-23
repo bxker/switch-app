@@ -24,7 +24,9 @@ const register = async (req, res) => {
             email: newUser[0].email,
             user_id: newUser[0].user_id,
             username: newUser[0].username,
-            favorite_color: newUser[0].favorite_color
+            favorite_color: newUser[0].favorite_color,
+            twitch_username: foundUser[0].twitch_username,
+            stream_title: foundUser[0].stream_title
         };
         
         res.status(200).json(req.session.user);
@@ -51,7 +53,9 @@ const login = async (req, res) => {
                 email: foundUser[0].email,
                 user_id: foundUser[0].user_id,
                 username: foundUser[0].username,
-                favorite_color: foundUser[0].favorite_color
+                favorite_color: foundUser[0].favorite_color,
+                twitch_username: foundUser[0].twitch_username,
+                stream_title: foundUser[0].stream_title
             }
             console.log(req.session.user)
             res.status(200).json(req.session.user);
