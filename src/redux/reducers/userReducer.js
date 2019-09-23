@@ -19,6 +19,7 @@ const LOGIN_USER = 'LOGIN_USER';
 const LOGOUT_USER = 'LOGOUT_USER';
 const UPDATE_USERNAME = 'UPDATE_USERNAME';
 const UPDATE_STREAM_TITLE = 'UPDATE_STREAM_TITLE';
+const ADD_TWITCH_USERNAME = 'ADD_TWITCH_USERNAME';
 const UPDATE_TWITCH_USERNAME = 'UPDATE_TWITCH_USERNAME';
 const UPDATE_FAVORITE_COLOR = 'UPDATE_FAVORITE_COLOR';
 const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
@@ -65,6 +66,13 @@ export function updateStreamTitle(title){
     return{
         type: UPDATE_STREAM_TITLE,
         payload: axios.put('/auth/settings/streamtitle', title)
+    }
+}
+
+export function addTwitchUsername(twitch){
+    return{
+        type: ADD_TWITCH_USERNAME,
+        payload: axios.post('/auth/settings/twitch', twitch)
     }
 }
 
@@ -151,6 +159,11 @@ export default function reducer(state = initialState, action){
             return{
                 ...state,
                 stream_title: payload.data.stream_title
+            }
+        case `${ADD_TWITCH_USERNAME}_FULFILLED`:
+            return{
+                ...state,
+                twitch_username: payload.data.twitch_username
             }
         case `${UPDATE_TWITCH_USERNAME}_FULFILLED`:
             return{

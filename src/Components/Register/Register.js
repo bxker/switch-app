@@ -22,6 +22,7 @@ class Register extends Component {
         const {first_name, last_name, username, email, password, favorite_color} = this.state;
         const {registerUser} = this.props;
         registerUser({first_name, last_name, username, email, password, favorite_color});
+        alert('Account created')
     }
 
     handleInput = e => {
@@ -32,7 +33,7 @@ class Register extends Component {
     render() {
         console.log(this.props.user_id)
         if(this.props.user_id){
-            return <Redirect to="/browse/live"/>
+            return <Redirect to="/login"/>
         }
 
         return (

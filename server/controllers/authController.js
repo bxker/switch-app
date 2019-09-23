@@ -24,9 +24,9 @@ const register = async (req, res) => {
             email: newUser[0].email,
             user_id: newUser[0].user_id,
             username: newUser[0].username,
-            favorite_color: newUser[0].favorite_color,
-            twitch_username: foundUser[0].twitch_username,
-            stream_title: foundUser[0].stream_title
+            favorite_color: newUser[0].favorite_color
+            // twitch_username: foundUser[0].twitch_username,
+            // stream_title: foundUser[0].stream_title
         };
         
         res.status(200).json(req.session.user);

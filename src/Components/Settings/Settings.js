@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Settings.sass';
 import {connect} from 'react-redux';
-import {getSession, updateUsername, updateStreamTitle, updateTwitchUsername, updateFavoriteColor, deleteAccount} from '../../redux/reducers/userReducer';
+import {getSession, updateUsername, updateStreamTitle, addTwitchUsername, updateTwitchUsername, updateFavoriteColor, deleteAccount} from '../../redux/reducers/userReducer';
 
 class Settings extends Component {
     constructor(){
@@ -28,6 +28,12 @@ class Settings extends Component {
         const {updateStreamTitle} = this.props;
         updateStreamTitle({stream_title});
         alert(`Stream title has been updated to: ${stream_title}`)
+    }
+
+    handleAddTwitchUsername = () => {
+        const {twitch_username} = this.state;
+        const {addTwitchUsername} = this.props;
+        addTwitchUsername({twitch_username});
     }
 
     handleUpdateTwitchUsername = () => {
@@ -83,6 +89,14 @@ class Settings extends Component {
                         ></input>
                         <button onClick={this.handleUpdateStreamTitle}>Submit</button>
                     </div>
+                    <div className="div-2">
+                        <h2>Add Twitch Username:</h2>
+                        <input
+                            name="twitch_username"
+                            onChange={this.handleChange}
+                        ></input>
+                        <button onClick={this.handleAddTwitchUsername}>Submit</button>
+                    </div>
                     <div className='div-3'>
                         <h2>Change Twitch Username:</h2>
                         <input
@@ -123,6 +137,7 @@ export default connect(mapStateToProps, {
     updateUsername,
     getSession,
     updateStreamTitle,
+    addTwitchUsername,
     updateTwitchUsername,
     updateFavoriteColor,
     deleteAccount

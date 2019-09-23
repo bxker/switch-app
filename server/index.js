@@ -6,7 +6,9 @@ const session = require('express-session');
 
 //controllers
 const {getUser, register, login, logout} = require('./controllers/authController.js');
-const {updateUsername, updateStreamTitle, updateTwitchUsername, updateFavoriteColor, deleteUser} = require('./controllers/settingsController');
+const {updateUsername, updateStreamTitle, addTwitchUsername, updateTwitchUsername, updateFavoriteColor, deleteUser} = require('./controllers/settingsController');
+const {getStreams, getCurrentStream} = require('./controllers/streamsController');
+
 //dotenv
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 
@@ -39,6 +41,8 @@ app.post('/auth/logout', logout)
 app.put('/auth/settings/user', updateUsername);
 //update stream title
 app.put('/auth/settings/streamtitle', updateStreamTitle);
+//add twitch username
+app.post('/auth/settings/twitch', addTwitchUsername);
 //update twitch username
 app.put('/auth/settings/twitch', updateTwitchUsername);
 //update favorite color
@@ -47,5 +51,7 @@ app.put('/auth/settings/color', updateFavoriteColor)
 app.delete('/auth/settings/user', deleteUser);
 
 //api endpoints
+app.get('/api/streams', getStreams);
+app.get('/api/streams/:id', getCurrentStream);
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
