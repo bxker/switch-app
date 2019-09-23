@@ -4,6 +4,13 @@ import { getSession } from "../../redux/reducers/userReducer";
 // import {updateStreamTitle} from '../../redux/reducers/userReducer';
 
 class Profile extends Component {
+    constructor(){
+      super();
+      this.state = {
+        streams: [],
+        currentStream: []
+      }
+    }
     componentDidMount() {
         this.props.getSession();
     }
@@ -11,6 +18,7 @@ class Profile extends Component {
     render() {
     return (
         <div>
+          <div>
             <h1>Profile</h1>
             <h1 style={{ color: "white" }}>{this.props.match.params.username}</h1>
             <iframe
@@ -24,6 +32,7 @@ class Profile extends Component {
                 muted="true"
                 title={`${this.props.stream_title}`}
             ></iframe>
+          </div>
         </div>
     );
   }

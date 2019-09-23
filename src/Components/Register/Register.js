@@ -33,7 +33,7 @@ class Register extends Component {
     render() {
         console.log(this.props.user_id)
         if(this.props.user_id){
-            return <Redirect to="/login"/>
+            return <Redirect to="/browse/live"/>
         }
 
         return (

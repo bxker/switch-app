@@ -53,10 +53,11 @@ class Settings extends Component {
     handleDeleteAccount = () => {
         const {deleteAccount} = this.props;
         let answer = prompt('Are you sure you want to delete your account? If so, type DELETE. If this was a mistake, type anything else and click ok.')
-        if(answer.toUpperCase() === 'DELETE'){
-            deleteAccount();
-        }else{
+        
+        if(answer === 'null' || answer === null || answer === ''){
             return;
+        }else if(answer.toUpperCase() === 'DELETE'){
+            deleteAccount();
         }
     }
 
