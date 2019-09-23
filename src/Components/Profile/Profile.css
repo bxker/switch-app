@@ -1,1 +1,45 @@
-/* No CSS *//*# sourceMappingURL=Profile.css.map */
+.profile-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  font-family: 'Exo', sans-serif;
+  color: white;
+}
+
+.profile-section-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 3vw;
+}
+
+.profile-section-1 section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile-section-1 section h1 {
+  font-size: 2rem;
+}
+
+.profile-section-1 section img {
+  margin-right: .75vw;
+  max-width: 1.55vw;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.twitch-player {
+  width: 60vw;
+  height: 67vh;
+}
+/*# sourceMappingURL=Profile.css.map */

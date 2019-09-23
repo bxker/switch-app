@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getSession } from "../../redux/reducers/userReducer";
 import Axios from "axios";
+import './Profile.sass';
 // import {updateStreamTitle} from '../../redux/reducers/userReducer';
 
 class Profile extends Component {
@@ -46,12 +47,15 @@ class Profile extends Component {
     render() {
       
       return (
-        <div>
-          <div>
-            <h1>Profile</h1>
-            <h1 style={{ color: "white" }}>{this.props.match.params.username}</h1>
+        <div className="profile-main">
+          <div className="profile-section-1">
+            <section>
+              <img src='https://image.flaticon.com/icons/svg/17/17004.svg' alt='user_logo'/>
+              <h1>{this.props.match.params.username}</h1>
+            </section>
             {this.state.currentStream[0] ?
               <iframe
+                  className="twitch-player"
                   src={`https://player.twitch.tv/?channel=${this.state.currentStream}`}
                   frameborder="none"
                   scrolling="none"
@@ -60,7 +64,7 @@ class Profile extends Component {
                   muted="true"
                   title={`${this.props.stream_title}`}
               ></iframe>
-            : <h1>No Stream at this route</h1>
+            : <h1>Stream failed to load, please reload the page.</h1>
             }
           </div>
         </div>
