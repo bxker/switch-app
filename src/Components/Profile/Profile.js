@@ -26,21 +26,15 @@ class Profile extends Component {
     componentDidUpdate(prevProps){
       let updatedParam = this.props.match.params.username
       if(this.props.match.params === this.state.currentStream){
-        console.log('updatehitreturn')
         return;
       }else if(prevProps.match.params.username !== this.props.match.params.username){
-        console.log('update hit')
-        console.log(prevProps.username)
-        console.log(this.props.match.params.username)
         Axios.get(`/api/stream/${this.props.match.params.username}`, updatedParam)
         .then(res => {
-          console.log(res.data)
           this.setState({
             currentStream: res.data.twitch_username
           })
         })
         .catch(err => console.log(err))
-        console.log(this.state.currentStream)
       }
     }
     
@@ -64,7 +58,7 @@ class Profile extends Component {
                   muted="true"
                   title={`${this.props.stream_title}`}
               ></iframe>
-            : <h1>Stream failed to load, please reload the page.</h1>
+            : <h1>Stream failed to load, please reload the page. No </h1>
             }
           </div>
         </div>
