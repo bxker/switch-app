@@ -14,6 +14,12 @@ class Profile extends Component {
     }
     componentDidMount() {
       this.props.getSession();
+      Axios.get(`/api/stream/${this.props.match.params.username}`)
+      .then(res => {
+        this.setState({
+          currentStream: res.data.twitch_username
+        })
+      })
     }
 
     componentDidUpdate(prevProps){
@@ -47,8 +53,6 @@ class Profile extends Component {
             {this.state.currentStream[0] ?
               <iframe
                   src={`https://player.twitch.tv/?channel=${this.state.currentStream}`}
-                  height="600px"
-                  width="1100px"
                   frameborder="none"
                   scrolling="none"
                   allowfullscreen="true"
