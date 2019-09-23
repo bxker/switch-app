@@ -3,7 +3,7 @@ import axios from 'axios';
 //initial state
 const initialState = {
     streams: [],
-    current_stream: []
+    current_stream: ''
 }
 
 //const strings
@@ -19,7 +19,7 @@ export function getStreams(){
 
 export function getCurrentStream(){
     return{
-
+        
     }
 }
 

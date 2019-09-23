@@ -52,6 +52,6 @@ app.delete('/auth/settings/user', deleteUser);
 
 //api endpoints
 app.get('/api/streams', getStreams);
-app.get('/api/streams/:id', getCurrentStream);
+app.get('/api/stream/:username', getCurrentStream);
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
