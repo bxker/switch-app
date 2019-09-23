@@ -56,7 +56,6 @@ class Settings extends Component {
 
     //handle input text
     handleChange = e => {
-        console.log(e.target.value)
         this.setState({[e.target.name]: e.target.value})
     }
 
