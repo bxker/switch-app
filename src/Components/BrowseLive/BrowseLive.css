@@ -1,0 +1,78 @@
+.browse-live-main {
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.browse-live-main h3 {
+  color: white;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-align: center;
+  font-family: 'Exo', sans-serif;
+}
+
+#streams-mapped {
+  width: 80vw;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 5vh;
+}
+
+#color-box {
+  width: 15vw;
+  height: 5vh;
+}
+
+.streams {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 18vw;
+  height: 20vh;
+  background: #7DE38D;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.streams h1 {
+  font-size: 2rem;
+  color: #00242B;
+}
+
+.streams h2 {
+  font-size: 1.15rem;
+  color: white;
+}
+/*# sourceMappingURL=BrowseLive.css.map */

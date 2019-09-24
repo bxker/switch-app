@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import {getStreams} from "../../redux/reducers/streamsReducer";
 import {Link} from 'react-router-dom';
+import './BrowseLive.sass';
 
 class BrowseLive extends Component {
     componentDidMount(){
@@ -9,23 +10,23 @@ class BrowseLive extends Component {
     }
 
     render() {
-        console.log(this.props.streams)
         const streamsMapped = this.props.streams.map((stream, i) => {
             return (
                 <div key={i} className="streams">
-                    <Link to={`/${stream.username}`}>
-                        <h1>Username: {stream.username}</h1>
-                        <h1>Title: {stream.stream_title}</h1>
+                    <Link to={`/${stream.username}`} style={{textDecoration: 'none'}}>
+                        <div id="color-box" style={{backgroundColor: `${stream.favorite}`}}></div>
+                        <h1>{stream.username}</h1>
+                        <h2>{stream.stream_title}</h2>
                     </Link>
                 </div>
             )
         })
         return (
-            <div>
-                <h1>Browse Profiles</h1>
-                <span id="streams-mapped">
-                    {streamsMapped}
-                </span>
+            <div className="browse-live-main">
+                    <h3>Browse Profiles</h3>
+                    <span id="streams-mapped">
+                        {streamsMapped}
+                    </span>
             </div>
         )
     }
