@@ -47,7 +47,7 @@ class Profile extends Component {
               <img src='https://image.flaticon.com/icons/svg/17/17004.svg' alt='user_logo'/>
               <h1>{this.props.match.params.username}</h1>
             </section>
-            {this.state.currentStream[0] ?
+            {this.state.currentStream ?
               <iframe
                   className="twitch-player"
                   src={`https://player.twitch.tv/?channel=${this.state.currentStream}`}
@@ -58,7 +58,7 @@ class Profile extends Component {
                   muted="true"
                   title={`${this.props.stream_title}`}
               ></iframe>
-            : <h1>Stream failed to load, please reload the page. No </h1>
+            : <h1 style={{fontSize: '2rem'}}>This user has not set a Twitch username.</h1>
             }
           </div>
         </div>
