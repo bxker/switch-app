@@ -21,6 +21,7 @@ export default function reducer(state = initialState, action){
 
     switch(type){
         case `${GET_STREAMS}_FULFILLED`:
+            console.log(payload.data)
             return{
                 ...state,
                 streams: payload.data
