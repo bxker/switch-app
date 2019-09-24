@@ -10,15 +10,16 @@ class Profile extends Component {
       super();
       this.state = {
         streams: [],
-        currentStream: ''
+        currentStream: []
       }
     }
     componentDidMount() {
       this.props.getSession();
       Axios.get(`/api/stream/${this.props.match.params.username}`)
       .then(res => {
+        console.log(res.data)
         this.setState({
-          currentStream: res.data.twitch_username
+          currentStream: res.data
         })
       })
     }
@@ -30,8 +31,9 @@ class Profile extends Component {
       }else if(prevProps.match.params.username !== this.props.match.params.username){
         Axios.get(`/api/stream/${this.props.match.params.username}`, updatedParam)
         .then(res => {
+          console.log(res.data)
           this.setState({
-            currentStream: res.data.twitch_username
+            currentStream: res.data
           })
         })
         .catch(err => console.log(err))
@@ -46,11 +48,12 @@ class Profile extends Component {
             <section>
               <img src='https://image.flaticon.com/icons/svg/17/17004.svg' alt='user_logo'/>
               <h1>{this.props.match.params.username}</h1>
+              <h1>{this.state.currentStream.stream_title}</h1>
             </section>
-            {this.state.currentStream ?
+            {this.state.currentStream.twitch_username ?
               <iframe
                   className="twitch-player"
-                  src={`https://player.twitch.tv/?channel=${this.state.currentStream}`}
+                  src={`https://player.twitch.tv/?channel=${this.state.currentStream.twitch_username}`}
                   frameborder="none"
                   scrolling="none"
                   allowfullscreen="true"

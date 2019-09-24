@@ -34,6 +34,7 @@ class Settings extends Component {
         const {twitch_username} = this.state;
         const {addTwitchUsername} = this.props;
         addTwitchUsername({twitch_username});
+        alert(`Twitch username has been set to: ${twitch_username}`)
     }
 
     handleUpdateTwitchUsername = () => {
