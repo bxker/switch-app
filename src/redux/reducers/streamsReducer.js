@@ -2,24 +2,17 @@ import axios from 'axios';
 
 //initial state
 const initialState = {
-    streams: [],
-    current_stream: ''
+    streams: []
 }
 
 //const strings
 const GET_STREAMS = 'GET_STREAMS';
-const GET_CURRENT_STREAM = 'GET_CURRENT_STREAM';
 
 //functions
 export function getStreams(){
     return{
-
-    }
-}
-
-export function getCurrentStream(){
-    return{
-        
+        type: GET_STREAMS,
+        payload: axios.get('/api/streams')
     }
 }
 
@@ -27,6 +20,11 @@ export default function reducer(state = initialState, action){
     const {type, payload} = action;
 
     switch(type){
+        case `${GET_STREAMS}_FULFILLED`:
+            return{
+                ...state,
+                streams: payload.data
+            }
         default: return state;
     }
 }

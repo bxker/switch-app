@@ -45,11 +45,19 @@ class Profile extends Component {
       return (
         <div className="profile-main">
           <div className="profile-section-1">
-            <section>
-              <img src='https://image.flaticon.com/icons/svg/17/17004.svg' alt='user_logo'/>
-              <h1>{this.props.match.params.username}</h1>
-              <h1>{this.state.currentStream.stream_title}</h1>
-            </section>
+            <div className="flex-row">
+              <section className="username-logo">
+                <img src='https://image.flaticon.com/icons/svg/17/17004.svg' alt='user_logo'/>
+                <h1>{this.props.match.params.username}</h1>
+              </section>
+              <section>
+                <h2>{this.state.currentStream.stream_title}</h2>
+              </section>
+              <section>
+                <button>Follow</button>
+              </section>
+            </div>
+
             {this.state.currentStream.twitch_username ?
               <iframe
                   className="twitch-player"

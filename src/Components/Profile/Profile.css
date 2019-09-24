@@ -19,19 +19,44 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-left: 3vw;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
 }
 
-.profile-section-1 section {
+.profile-section-1 button {
+  border: none;
+  border-radius: 10px;
+  width: 6vw;
+  height: 4vh;
+  cursor: pointer;
+  color: white;
+  font-size: 1.25rem;
+  background: #7DE38D;
+}
+
+.flex-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 60vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.profile-section-1 section h1 {
-  font-size: 2rem;
+.username-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.profile-section-1 section img {
+.username-logo img {
   margin-right: .75vw;
   max-width: 1.55vw;
   -webkit-filter: invert(100%);
