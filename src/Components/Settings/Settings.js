@@ -110,6 +110,7 @@ class Settings extends Component {
                     <div className="div-4">
                         <h2>Change Favorite Color:</h2>
                         <input
+                            type="color"
                             name="favorite_color"
                             onChange={this.handleChange}
                         ></input>

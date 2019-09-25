@@ -74,6 +74,7 @@ class Register extends Component {
                             ></input>
                             <h2>Favorite Color</h2>
                             <input
+                                type="color"
                                 name='favorite_color'
                                 onChange={this.handleInput} 
                             ></input>
