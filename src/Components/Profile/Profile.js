@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getSession } from "../../redux/reducers/userReducer";
 import Axios from "axios";
 import './Profile.sass';
+import Chat from './Chat/Chat';
 // import {updateStreamTitle} from '../../redux/reducers/userReducer';
 
 class Profile extends Component {
@@ -70,6 +71,9 @@ class Profile extends Component {
               ></iframe>
             : <h1 style={{fontSize: '2rem'}}>This user has not set a Twitch username.</h1>
             }
+          </div>
+          <div className="chat-section">
+            <Chat />
           </div>
         </div>
     );

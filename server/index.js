@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const massive = require('massive');
 const session = require('express-session');
+const server = require('http').Server(app);
+const sockets = require('socket.io');
+const io = sockets(server);
 
 //controllers
 const {getUser, register, login, logout} = require('./controllers/authController.js');
@@ -54,4 +57,20 @@ app.delete('/auth/settings/user', deleteUser);
 app.get('/api/streams', getStreams);
 app.get('/api/stream/:username', getCurrentStream);
 
+
+//sockets
+let messages = [];
+
+io.on("connection", socket => {
+    socket.emit("onConnection", {
+        message: "Sockets connected"
+    })
+
+    socket.on("messageSend", data => {
+        messages.push(data.message);
+        io.emit('newMessage', {messages})
+    })
+})
+
+server.listen(80);
 app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
