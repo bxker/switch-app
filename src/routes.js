@@ -13,7 +13,7 @@ export default (
         <Route exact path="/" component={Landing}/>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
-        <Route path="/browse/live" component={BrowseLive} />
+        <Route path="/browse" component={BrowseLive} />
         <Route path="/user/settings" component={Settings} />
         <Route path="/:username" component={Profile}/>
     </Switch>

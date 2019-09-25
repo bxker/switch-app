@@ -26,7 +26,7 @@ class Login extends Component {
 
     render() {
         if(this.props.user_id){
-            return <Redirect to='/browse/live'/>
+            return <Redirect to='/browse'/>
         }
         return (
             <div className="register-main">

@@ -10,22 +10,6 @@ class BrowseLive extends Component {
 
     componentDidMount(){
         this.props.getStreams();
-        // this.props.streams.map(stream => {
-        //     return(
-        //         Axios.get(`https://api.twitch.tv/helix/users?login=${stream.username}`, {
-        //             headers: {
-        //                 "Client_ID": client_id
-        //             }
-        //         })
-        //         .then(res => {
-        //             console.log(res.data)
-        //             this.setState({
-        //                 twitch_id: res.data.data.id
-        //             })
-        //         })
-        //         .catch(err => console.log(err))
-        //     )
-        // })
     }
 
     render() {
