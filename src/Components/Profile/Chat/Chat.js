@@ -1,6 +1,7 @@
 import React from "react";
 import io from "socket.io-client";
 import './Chat.sass';
+import EmojiPicker from 'emoji-picker-react'
 
 function Chat(props) {
   console.log(props.username);
@@ -8,6 +9,8 @@ function Chat(props) {
   const [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState(null);
   const [myRef] = React.useState(React.useRef());
+
+
   React.useEffect(() => {
     setSocket(io("http://localhost"));
   }, []);
@@ -15,7 +18,7 @@ function Chat(props) {
   React.useEffect(() => {
     myRef.current.scrollTop = myRef.current.scrollHeight;
   }, [messages])
-
+    
   if (socket) {
     socket.on(
       "newMessage",
@@ -32,17 +35,25 @@ function Chat(props) {
         <ul className="chat-message-ul" ref={myRef}>
           {messages.map(val => (
             <div className="chat-message-cont">
-              <li style={{color: `#7DE38D`}}>
-                {val.username} :  
-              </li>
+              {val.user ? 
+                  <li style={{color: `#7DE38D`}}>
+                    {val.username} :  
+                  </li>
+                :
+                  <li style={{color: `#7DE38D`}}>
+                    <h1>guestuser{Math.floor(Math.random() * 10000) + 8} :</h1> 
+                  </li>
+                }
               <h1>{val.message}</h1>
             </div>
           ))}
         </ul>
-      <div className="input-send">
+      <form className="input-send">
         <input onChange={e => setUserMessage(e.target.value)} />
+        {/* <EmojiPicker onEmojiClick={}/> */}
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault()
             socket.emit("messageSend", {
               message: userMessage,
               username: props.username,
@@ -52,7 +63,7 @@ function Chat(props) {
         >
           Send Message
         </button>
-      </div>
+      </form>
     </div>
   );
 }
