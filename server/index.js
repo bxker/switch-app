@@ -62,13 +62,33 @@ app.get('/api/stream/:username', getCurrentStream);
 let messages = [];
 
 io.on("connection", socket => {
+
     socket.emit("onConnection", {
-        message: "Sockets connected"
+        message: "Sockets has been connected"
     })
 
     socket.on("messageSend", data => {
-        messages.push(data.message);
-        io.emit('newMessage', {messages})
+        const {username, message, profile} = data;
+        console.log(username)
+        let profileIndex = messages.findIndex(val => val.profile === profile); 
+        if(profileIndex === -1) {
+            messages.push({
+                profile,
+                messages: []
+            })
+            profileIndex = messages.length - 1;
+        } 
+        messages[profileIndex].messages.push({
+            username,
+            message
+        }); 
+        io.emit("newMessage", {
+            profile,
+            messages: messages[profileIndex].messages 
+        })
+
+        
+        console.log(messages);
     })
 })
 

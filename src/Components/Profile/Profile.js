@@ -41,7 +41,7 @@ class Profile extends Component {
     }
     
     render() {
-      
+      console.log(this.props.username)
       return (
         <div className="profile-main">
           <div className="profile-section-1">
@@ -73,7 +73,8 @@ class Profile extends Component {
             }
           </div>
           <div className="chat-section">
-            <Chat />
+            
+            <Chat profile={this.props.match.params.username} username={this.props.username}/>
           </div>
         </div>
     );
