@@ -86,8 +86,6 @@ io.on("connection", socket => {
             profile,
             messages: messages[profileIndex].messages 
         })
-
-        
         console.log(messages);
     })
 })

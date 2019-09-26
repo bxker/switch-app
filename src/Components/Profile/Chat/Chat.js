@@ -23,7 +23,7 @@ function Chat(props) {
         
         {messages.map(val => (
           <li>
-           {val.username} :{val.message}
+           {val.username} : {val.message}
           </li>
         ))}
       </ul>
