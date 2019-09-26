@@ -74,7 +74,7 @@ class Profile extends Component {
           </div>
           <div className="chat-section">
             
-            <Chat profile={this.props.match.params.username} username={this.props.username}/>
+            <Chat favorite_color={this.props.favorite_color} profile={this.props.match.params.username} username={this.props.username}/>
           </div>
         </div>
     );
