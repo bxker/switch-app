@@ -1,7 +1,6 @@
 import React from "react";
 import io from "socket.io-client";
 import './Chat.sass';
-import EmojiPicker from 'emoji-picker-react'
 
 function Chat(props) {
   console.log(props.username);
@@ -26,10 +25,6 @@ function Chat(props) {
     );
   }
 
-  // const autoScroll = () => {
-  //   if(message)
-  // }
-
   return (
     <div className="chat-container">
         <ul className="chat-message-ul" ref={myRef}>
@@ -50,7 +45,6 @@ function Chat(props) {
         </ul>
       <form className="input-send">
         <input onChange={e => setUserMessage(e.target.value)} />
-        {/* <EmojiPicker onEmojiClick={}/> */}
         <button
           onClick={(e) => {
             e.preventDefault()
