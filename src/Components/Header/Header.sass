@@ -51,11 +51,20 @@
         width: 80px
 
 @media(max-width: 650px)
+    .header-main
+        @include flex-column
+        margin-bottom: 3vh
+        align-items: center
+        height: 15vh
     .section-1 img
-        width: 10vw
+        width: 20vw
+        margin: 0 0 0 0
     .section-2
-        width: 40%
-        margin-right: 20vw
+        width: 80%
+        margin: 0 0 0 0
+        justify-content: space-around
+        align-items: center
     .section-2 button
         width: 60px
-        font-size: 90%
+        font-size: 80%
+        margin: 0 0 0 0
