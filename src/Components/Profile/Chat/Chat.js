@@ -30,7 +30,7 @@ function Chat(props) {
         <ul className="chat-message-ul" ref={myRef}>
           {messages.map(val => (
             <div className="chat-message-cont">
-              {val.user ? 
+              {props.username ? 
                   <li style={{color: `#7DE38D`}}>
                     {val.username} :  
                   </li>
