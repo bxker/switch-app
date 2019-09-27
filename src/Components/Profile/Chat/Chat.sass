@@ -13,22 +13,23 @@
     
     
 .chat-message-ul
-    overflow-y: auto
+    overflow-y: scroll
+    //firefox scrollbar
+    scrollbar-width: none
     width: 100%
     max-height: 630px
 
+    //chrome scrollbar
 .chat-message-ul::-webkit-scrollbar
-    width: .5rem
+    display: none
 
 .chat-message-cont
     // margin-left: 15px
     margin: 10px 0 10px 18px
     width: 90%
-    
     display: flex
     li
         margin-right: 10px
-
 
 .input-send
     width: 100%
