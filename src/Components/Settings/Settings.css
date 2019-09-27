@@ -19,7 +19,7 @@
 .settings-section-1 {
   width: 50%;
   height: 20%;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
   font-size: 2rem;
   color: white;
   display: -webkit-box;
@@ -52,8 +52,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -64,6 +65,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -71,7 +76,7 @@
           align-items: center;
   width: 100%;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .settings-section-2 div h2 {
@@ -109,7 +114,65 @@
 }
 
 .username-color {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-shadow: 0 0 3px #FFFFFF;
+}
+
+@media (max-width: 1190px) {
+  .settings-section-1 {
+    width: 70%;
+    margin-top: 2vh;
+  }
+  .settings-section-2 {
+    width: 70%;
+    height: 90vh;
+    margin: 5vh 0 0 0;
+  }
+  .settings-section-2 div {
+    height: 100%;
+  }
+  .settings-section-2 div button {
+    width: 100px;
+  }
+  .settings-section-2 div input {
+    width: 300px;
+  }
+  .settings-section-2 div h2 {
+    width: 10vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .settings-section-2 div {
+    height: 100%;
+  }
+  .settings-section-2 div button {
+    width: 100px;
+  }
+  .settings-section-2 div input {
+    width: 200px;
+  }
+  .settings-section-2 div h2 {
+    width: 15vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .settings-section-2 {
+    width: 90%;
+  }
+  .settings-section-2 div {
+    height: 100%;
+  }
+  .settings-section-2 div button {
+    width: 75px;
+  }
+  .settings-section-2 div input {
+    width: 150px;
+  }
+  .settings-section-2 div h2 {
+    font-size: 1rem;
+    width: 15vw;
+  }
 }
 /*# sourceMappingURL=Settings.css.map */
