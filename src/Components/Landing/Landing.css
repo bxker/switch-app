@@ -64,7 +64,7 @@
 
 .section-2-landing button {
   height: 5vh;
-  width: 8vw;
+  width: 100px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -76,5 +76,38 @@
 #login-button {
   background: white;
   color: #00242B;
+}
+
+@media (max-width: 750px) {
+  .welcome {
+    font-size: 6rem;
+  }
+  .to-switch {
+    font-size: 6rem;
+  }
+  .section-2-landing {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 650px) {
+  #landing-main {
+    margin-top: 15vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .section-2-landing {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 455px) {
+  .welcome {
+    font-size: 5rem;
+  }
+  .to-switch {
+    font-size: 5rem;
+  }
 }
 /*# sourceMappingURL=Landing.css.map */
