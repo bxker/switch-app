@@ -24,18 +24,7 @@
       justify-content: space-around;
   margin-left: 3vw;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5vw;
-}
-
-.profile-section-1 button {
-  border: none;
-  border-radius: 10px;
-  width: 80px;
-  height: 4vh;
-  cursor: pointer;
-  color: white;
   font-size: 1.25rem;
-  background: #7DE38D;
 }
 
 .flex-row {
@@ -70,7 +59,7 @@
 
 .username-logo img {
   margin-right: .75vw;
-  max-width: 1.55vw;
+  max-width: 25px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -78,5 +67,48 @@
 .twitch-player {
   width: 60vw;
   height: 67vh;
+}
+
+@media (max-width: 1230px) {
+  .profile-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .profile-section-1 {
+    width: 90%;
+    margin-left: 0px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .twitch-player {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .profile-section-1 {
+    height: 50vh;
+  }
+  .twitch-player {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 475px) {
+  .profile-section-1 {
+    height: 45vh;
+  }
+  .twitch-player {
+    height: 35vh;
+  }
 }
 /*# sourceMappingURL=Profile.css.map */

@@ -12,16 +12,7 @@
     justify-content: space-around
     margin-left: 3vw
     font-family: $font-2
-    font-size: 1.5vw
-    button
-        border: none
-        border-radius: 10px
-        width: 80px
-        height: 4vh
-        cursor: pointer
-        color: white
-        font-size: 1.25rem
-        background: $color-1
+    font-size: 1.25rem
     
 .flex-row
     @include flex-row
@@ -34,9 +25,33 @@
     align-items: center
     img
         margin-right: .75vw
-        max-width: 1.55vw
+        max-width: 25px
         filter: invert(100%)
 
 .twitch-player
     width: 60vw
     height: 67vh
+
+//media queries
+@media(max-width: 1230px)
+    .profile-main
+        @include flex-column
+        align-items: center
+    .profile-section-1
+        width: 90%
+        margin-left: 0px
+        align-items: center
+    .twitch-player
+        width: 100%
+
+@media(max-width: 650px)
+    .profile-section-1
+        height: 50vh
+    .twitch-player
+        height: 40vh
+
+@media(max-width: 475px)
+    .profile-section-1
+        height: 45vh
+    .twitch-player
+        height: 35vh

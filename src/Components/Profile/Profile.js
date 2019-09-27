@@ -53,9 +53,6 @@ class Profile extends Component {
               <section>
                 <h2>{this.state.currentStream.stream_title}</h2>
               </section>
-              <section>
-                <button>Follow</button>
-              </section>
             </div>
 
             {this.state.currentStream.twitch_username ?
