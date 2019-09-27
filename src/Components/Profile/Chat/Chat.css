@@ -81,6 +81,7 @@
   cursor: pointer;
   background-color: #7DE38D;
   color: white;
+  font-size: 80%;
 }
 
 @media (max-width: 1230px) {
