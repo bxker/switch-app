@@ -17,9 +17,9 @@ class BrowseLive extends Component {
             return (
                 <div key={i} className="streams">
                     <Link to={`/${stream.username}`} style={{textDecoration: 'none'}}>
-                        <div id="color-box" style={{backgroundColor: `${stream.favorite}`}}></div>
                         <h1>{stream.username}</h1>
-                        <h2>{stream.stream_title}</h2>
+                        <div id="color-box" style={{backgroundColor: `${stream.favorite_color}`}}><h2>{stream.stream_title}</h2></div>
+                        
                     </Link>
                 </div>
             )

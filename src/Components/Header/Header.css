@@ -16,7 +16,7 @@
 }
 
 .section-1 img, .section-2 button img {
-  max-width: 4vw;
+  max-width: 60px;
   margin-right: 10px;
   margin-left: 50px;
 }
@@ -33,7 +33,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-right: 2vw;
+  margin-right: 4vw;
 }
 
 .section-2 button {
@@ -52,5 +52,42 @@
 
 #logout-button {
   background: red;
+}
+
+@media (max-width: 1125px) {
+  .section-2 {
+    width: 40%;
+  }
+  .section-2 button {
+    width: 80px;
+    margin-right: 5vw;
+  }
+}
+
+@media (max-width: 775px) {
+  .section-1 img, .section-2 button img {
+    width: 10vw;
+  }
+  .section-2 {
+    width: 40%;
+    margin-right: 10vw;
+  }
+  .section-2 button {
+    width: 80px;
+  }
+}
+
+@media (max-width: 650px) {
+  .section-1 img, .section-2 button img {
+    width: 10vw;
+  }
+  .section-2 {
+    width: 40%;
+    margin-right: 20vw;
+  }
+  .section-2 button {
+    width: 60px;
+    font-size: 90%;
+  }
 }
 /*# sourceMappingURL=Header.css.map */

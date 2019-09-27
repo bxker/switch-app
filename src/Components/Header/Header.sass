@@ -7,7 +7,7 @@
     height: 10vh
 
 .section-1 img
-    max-width: 4vw
+    max-width: 60px
     margin-right: 10px
     margin-left: 50px
 
@@ -15,7 +15,7 @@
     width: 20vw
     @include flex-row
     justify-content: space-between
-    margin-right: 2vw
+    margin-right: 4vw
 
 .section-2 button
     border: none
@@ -33,4 +33,29 @@
 #logout-button
     background: red
 
+//media queries
+@media(max-width: 1125px)
+    .section-2
+        width: 40%
+    .section-2 button
+        width: 80px
+        margin-right: 5vw
 
+@media(max-width: 775px)
+    .section-1 img
+        width: 10vw
+    .section-2
+        width: 40%
+        margin-right: 10vw
+    .section-2 button
+        width: 80px
+
+@media(max-width: 650px)
+    .section-1 img
+        width: 10vw
+    .section-2
+        width: 40%
+        margin-right: 20vw
+    .section-2 button
+        width: 60px
+        font-size: 90%

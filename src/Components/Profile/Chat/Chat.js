@@ -44,7 +44,7 @@ function Chat(props) {
           ))}
         </ul>
       <form className="input-send">
-        <input onChange={e => setUserMessage(e.target.value)} />
+        <input placeholder="Enter message" onChange={e => setUserMessage(e.target.value)} />
         <button
           onClick={(e) => {
             e.preventDefault()

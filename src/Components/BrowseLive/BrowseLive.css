@@ -22,7 +22,7 @@
 
 #streams-mapped {
   width: 80vw;
-  height: 70vh;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,12 +37,7 @@
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 5vh;
-}
-
-#color-box {
-  width: 15vw;
-  height: 5vh;
+  margin: 5vh 0 5vh 0;
 }
 
 .streams {
@@ -56,23 +51,42 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 18vw;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 280px;
   height: 20vh;
   background: #7DE38D;
   border-radius: 10px;
   text-align: center;
+  margin: 20px;
 }
 
 .streams h1 {
   font-size: 2rem;
   color: #00242B;
+  margin-bottom: 10px;
 }
 
 .streams h2 {
   font-size: 1.15rem;
   color: white;
+}
+
+#color-box {
+  width: 250px;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=BrowseLive.css.map */
