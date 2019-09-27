@@ -1,48 +1,48 @@
+@import '../../Utilities.sass'
+
 .register-main
     height: 80vh
     width: 100vw
-    display: flex
-    flex-direction: column
+    @include flex-column
     align-items: center
     justify-content: space-between
-    font-family: 'Exo', sans-serif
+    font-family: $font-1
 
 .register-title
     color: white
     font-size: 2rem
 
 .switch-green
-    font-family: 'Roboto', sans-serif
-    color: #7DE38D
+    font-family: $font-2
+    color: $color-1
 
 .green-box
     width: 60%
     height: 50vh
     margin-bottom: 20vh
-    background: #7DE38D
+    background: $color-1
     border-radius: 10px
-    display: flex
-    flex-direction: column
+    @include flex-column
     justify-content: space-around
     align-items: center
-    color: #00242B
+    color: $color-2
 
 
 .section-1-register
     height: 30vh
     width: 100%
-    display: flex
+    @include flex-row
     justify-content: space-evenly
+    
 
 .section-2-register
     height: 10vh
-    display: flex
-    flex-direction: column
+    @include flex-column
     justify-content: space-around
     align-items: center
-    color: #00242B
+    color: $color-2
     a
-        color: #00242B
+        color: $color-2
     a:hover
         color: white
     button
@@ -51,35 +51,24 @@
         width: 10vw
         height: 5vh
         cursor: pointer
-        background: #00242B
+        background: $color-2
         color: white
         font-size: 1.2rem
 
-        
-
 .register-left
-    display: flex
-    flex-direction: column
+    @include flex-column
     justify-content: space-evenly
+    align-items: center
     input
         width: 15vw
         height: 3vh
         border: none
         border-radius: 5px
-        color: #00242B
-        font-family: 'Roboto', sans-serif
+        color: $color-2
+        font-family: $font-2
 
 .register-right
-    display: flex
-    flex-direction: column
-    justify-content: space-evenly
-    input
-        width: 15vw
-        height: 3vh
-        border: none
-        border-radius: 5px
-        color: #00242B
-        font-family: 'Roboto', sans-serif
+    @extend .register-left
 
 #cancel-x
     position: absolute
@@ -90,3 +79,21 @@
     font-size: 1.25rem
     font-weight: 600
     cursor: pointer
+
+//media queries
+@media(max-width: 1150px)
+    .section-2-register button
+        width: 100px
+
+@media(max-width: 950px)
+    .register-left input
+        width: 80%
+    
+@media(max-width: 590px)
+    .green-box
+        width: 80%
+    .section-2-register a
+        width: 80%
+    .section-2-register h1
+        text-align: center
+      

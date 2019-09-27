@@ -14,7 +14,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 .register-title {
@@ -23,7 +23,7 @@
 }
 
 .switch-green {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #7DE38D;
 }
 
@@ -54,6 +54,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -95,7 +99,7 @@
   font-size: 1.2rem;
 }
 
-.register-left {
+.register-left, .register-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,37 +110,18 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.register-left input {
+.register-left input, .register-right input {
   width: 15vw;
   height: 3vh;
   border: none;
   border-radius: 5px;
   color: #00242B;
-  font-family: 'Roboto', sans-serif;
-}
-
-.register-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.register-right input {
-  width: 15vw;
-  height: 3vh;
-  border: none;
-  border-radius: 5px;
-  color: #00242B;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #cancel-x {
@@ -148,5 +133,29 @@
   font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media (max-width: 1150px) {
+  .section-2-register button {
+    width: 100px;
+  }
+}
+
+@media (max-width: 950px) {
+  .register-left input, .register-right input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 590px) {
+  .green-box {
+    width: 80%;
+  }
+  .section-2-register a {
+    width: 80%;
+  }
+  .section-2-register h1 {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=Register.css.map */
