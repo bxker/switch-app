@@ -2,6 +2,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -11,21 +15,35 @@
   height: 10vh;
 }
 
-.section-1 img {
+.section-1 img, .section-2 button img {
   max-width: 4vw;
-  margin: 0 10px 0 50px;
+  margin-right: 10px;
+  margin-left: 50px;
+}
+
+.section-2 {
+  width: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 2vw;
 }
 
 .section-2 button {
   border: none;
   border-radius: 10px;
-  width: 6vw;
   height: 4vh;
   color: white;
   background: #7DE38D;
-  margin-right: 50px;
   cursor: pointer;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 .section-2 button:hover {

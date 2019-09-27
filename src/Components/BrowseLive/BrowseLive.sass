@@ -1,21 +1,21 @@
+@import '../../Utilities.sass'
+
 .browse-live-main
-    font-family: 'Roboto', sans-serif
-    display: flex
-    flex-direction: column
+    font-family: $font-2
+    @include flex-column
     align-items: center
     h3
         color: white
         font-size: 2rem
         text-decoration: underline
         text-align: center
-        font-family: 'Exo', sans-serif
+        font-family: $font-1
 
     
 #streams-mapped
     width: 80vw
     height: 70vh
-    display: flex
-    flex-direction: row
+    @include flex-row
     align-items: center
     flex-wrap: wrap
     justify-content: space-around
@@ -26,18 +26,17 @@
     height: 5vh
 
 .streams
-    display: flex
-    flex-direction: column
+    @include flex-column
     align-items: center
     justify-content: center
     width: 18vw
     height: 20vh
-    background: #7DE38D
+    background: $color-1
     border-radius: 10px
     text-align: center
     h1
         font-size: 2rem
-        color: #00242B
+        color: $color-2
     h2
         font-size: 1.15rem
         color: white

@@ -2,11 +2,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 50vh;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 50vh;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -27,18 +29,18 @@
 }
 
 .welcome {
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
   font-size: 8rem;
 }
 
 .to-switch {
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
   font-size: 8rem;
   text-align: center;
 }
 
 .switch-color {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #7DE38D;
 }
 
@@ -48,6 +50,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -69,6 +75,6 @@
 
 #login-button {
   background: white;
-  color: #00242b;
+  color: #00242B;
 }
 /*# sourceMappingURL=Landing.css.map */

@@ -1,1 +1,85 @@
-/* No CSS *//*# sourceMappingURL=Chat.css.map */
+.chat-container {
+  width: 30vw;
+  height: 75.7vh;
+  background: black;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 2.1vh;
+  margin-left: 2vw;
+}
+
+.chat-message-ul {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 100%;
+  max-height: 630px;
+}
+
+.chat-message-ul::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-message-cont {
+  margin: 10px 0 10px 18px;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.chat-message-cont li {
+  margin-right: 10px;
+}
+
+.input-send {
+  width: 100%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.input-send input {
+  width: 70%;
+  height: 80%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.09rem;
+}
+
+.input-send button {
+  width: 20%;
+  border: none;
+  height: 30%;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #7DE38D;
+  color: white;
+}
+/*# sourceMappingURL=Chat.css.map */

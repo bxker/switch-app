@@ -1,5 +1,5 @@
 .browse-live-main {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,7 +17,7 @@
   font-size: 2rem;
   text-decoration: underline;
   text-align: center;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 #streams-mapped {

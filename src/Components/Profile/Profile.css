@@ -2,8 +2,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100vw;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
   color: white;
 }
 
@@ -11,22 +15,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 80vh;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-left: 3vw;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5vw;
 }
 
 .profile-section-1 button {
   border: none;
   border-radius: 10px;
-  width: 6vw;
+  width: 80px;
   height: 4vh;
   cursor: pointer;
   color: white;
@@ -38,6 +42,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 60vw;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -51,6 +59,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
