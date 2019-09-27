@@ -25,7 +25,7 @@
   overflow-y: scroll;
   scrollbar-width: none;
   width: 100%;
-  max-height: 630px;
+  height: 85%;
 }
 
 .chat-message-ul::-webkit-scrollbar {
@@ -81,5 +81,16 @@
   cursor: pointer;
   background-color: #7DE38D;
   color: white;
+}
+
+@media (max-width: 1230px) {
+  .chat-container {
+    width: 90vw;
+    height: 50vh;
+  }
+  .input-send button {
+    border-radius: 4px;
+    height: 40%;
+  }
 }
 /*# sourceMappingURL=Chat.css.map */
