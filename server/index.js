@@ -69,7 +69,6 @@ io.on("connection", socket => {
 
     socket.on("messageSend", data => {
         const {username, message, profile} = data;
-        console.log(username)
         let profileIndex = messages.findIndex(val => val.profile === profile); 
         if(profileIndex === -1) {
             messages.push({
@@ -86,7 +85,6 @@ io.on("connection", socket => {
             profile,
             messages: messages[profileIndex].messages 
         })
-        console.log(messages);
     })
 })
 

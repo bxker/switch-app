@@ -6,6 +6,8 @@
 .pnp.js
 .env
 /src/secret.js
+/build
+.env.prod
 
 # testing
 /coverage
