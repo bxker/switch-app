@@ -56,11 +56,9 @@ const login = async (req, res) => {
                 twitch_username: foundUserTwitchStream[0].twitch_username,
                 stream_title: foundUserTwitchStream[0].stream_title
             }
-            console.log(req.session.user)
             res.status(200).json(req.session.user);
         }
     }
-
 }
 const logout = (req, res) => {
     req.session.destroy();
