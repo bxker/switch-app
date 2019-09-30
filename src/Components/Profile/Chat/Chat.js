@@ -3,7 +3,6 @@ import io from "socket.io-client";
 import './Chat.sass';
 
 function Chat(props) {
-  console.log(props.username);
   const [messages, setMessages] = React.useState([]);
   const [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState(null);
@@ -11,7 +10,7 @@ function Chat(props) {
 
 
   React.useEffect(() => {
-    setSocket(io("http://switchapp.xyz"));
+    setSocket(io("http://localhost:4000"));
   }, []);
 
   React.useEffect(() => {
