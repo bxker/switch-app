@@ -13,7 +13,7 @@ const {updateUsername, updateStreamTitle, addTwitchUsername, updateTwitchUsernam
 const {getStreams, getCurrentStream} = require('./controllers/streamsController');
 
 //dotenv
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
+const {SESSION_SECRET, CONNECTION_STRING} = process.env;
 
 //middleware
 app.use(express.json());
@@ -90,4 +90,4 @@ io.on("connection", socket => {
 })
 
 server.listen(80);
-app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
+app.listen(4000, () => console.log(`Server listening on port 4000`))
