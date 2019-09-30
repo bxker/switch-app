@@ -11,7 +11,7 @@ function Chat(props) {
 
 
   React.useEffect(() => {
-    setSocket(io("http://localhost"));
+    setSocket(io("http://switchapp.xyz"));
   }, []);
 
   React.useEffect(() => {
