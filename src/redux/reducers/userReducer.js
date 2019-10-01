@@ -85,12 +85,12 @@ export function addTwitchUsername(twitch) {
 }
 
 export function updateTwitchUsername(twitch) {
-  const userInfo = () => {
-    axios.put("/auth/settings/twitch", twitch);
-  };
+  
+    
+
   return {
     type: UPDATE_TWITCH_USERNAME,
-    payload: userInfo()
+    payload: axios.put("/auth/settings/twitch", twitch)
   };
 }
 
