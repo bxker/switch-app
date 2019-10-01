@@ -39,12 +39,12 @@ const updateTwitchUsername = (req, res) => {
             "Client-ID": process.env.client_id
         }
     })
-    .then(async response => {
+    .then(response => {
         console.log(response.data.data)
         let twitch_id = +response.data.data[0].id
         console.log(twitch_id)
         const {user_id} = req.session.user;
-        const updatedUser = await db.settings.updateTwitchUsername(twitch_username, user_id, twitch_id);
+        const updatedUser = db.settings.updateTwitchUsername(twitch_username, user_id, twitch_id);
         res.status(200).json(updatedUser[0]);
     })
 }
