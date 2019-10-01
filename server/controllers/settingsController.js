@@ -30,7 +30,7 @@ const addTwitchUsername = async (req, res) => {
     res.status(200).json(updatedUser[0]);
 }
 
-const updateTwitchUsername = async (req, res) => {
+const updateTwitchUsername = (req, res) => {
     const db = req.app.get('db');
     const {twitch_username} = req.body;
     console.log(process.env.client_id)

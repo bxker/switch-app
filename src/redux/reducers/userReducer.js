@@ -85,9 +85,6 @@ export function addTwitchUsername(twitch) {
 }
 
 export function updateTwitchUsername(twitch) {
-  
-    
-
   return {
     type: UPDATE_TWITCH_USERNAME,
     payload: axios.put("/auth/settings/twitch", twitch)
