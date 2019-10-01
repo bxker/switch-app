@@ -1,3 +1,6 @@
+const axios = require('axios');
+require('dotenv').config();
+
 const updateUsername = async (req, res) => {
     const db = req.app.get('db');
     const {username} = req.body;
@@ -30,9 +33,20 @@ const addTwitchUsername = async (req, res) => {
 const updateTwitchUsername = async (req, res) => {
     const db = req.app.get('db');
     const {twitch_username} = req.body;
-    const {user_id} = req.session.user;
-    const updatedUser = await db.settings.updateTwitchUsername(twitch_username, user_id);
-    res.status(200).json(updatedUser[0]);
+    console.log(process.env.client_id)
+    axios.get(`https://api.twitch.tv/helix/users?login=${twitch_username}`, {
+        headers: {
+            "Client-ID": process.env.client_id
+        }
+    })
+    .then(async response => {
+        console.log(response.data.data)
+        let twitch_id = +response.data.data[0].id
+        console.log(twitch_id)
+        const {user_id} = req.session.user;
+        const updatedUser = await db.settings.updateTwitchUsername(twitch_username, user_id, twitch_id);
+        res.status(200).json(updatedUser[0]);
+    })
 }
 
 const updateFavoriteColor = async (req, res) => {

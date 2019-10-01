@@ -10,9 +10,7 @@ const initialState = {
   email: "",
   favorite_color: "",
   stream_title: "",
-  twitch_username: "",
-  twitch_id: null,
-  is_live: false
+  twitch_username: ""
 };
 
 //const strings
@@ -89,11 +87,6 @@ export function addTwitchUsername(twitch) {
 export function updateTwitchUsername(twitch) {
   const userInfo = () => {
     axios.put("/auth/settings/twitch", twitch);
-    // axios.get(`https://api.twitch.tv/helix/users?login=${twitch}`, {
-    //   headers: {
-    //     Client_ID: client_id
-    //   }
-    // });
   };
   return {
     type: UPDATE_TWITCH_USERNAME,

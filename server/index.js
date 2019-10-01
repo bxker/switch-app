@@ -68,6 +68,7 @@ io.on("connection", socket => {
     socket.emit("onConnection", {
         message: "Sockets has been connected"
     })
+    
 
     socket.on("messageSend", data => {
         const {username, message, profile} = data;

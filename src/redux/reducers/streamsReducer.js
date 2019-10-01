@@ -2,11 +2,14 @@ import axios from 'axios';
 
 //initial state
 const initialState = {
-    streams: []
+    streams: [],
+    twitch_id: null,
+    is_live: false
 }
 
 //const strings
 const GET_STREAMS = 'GET_STREAMS';
+
 
 //functions
 export function getStreams(){
@@ -21,9 +24,11 @@ export default function reducer(state = initialState, action){
 
     switch(type){
         case `${GET_STREAMS}_FULFILLED`:
+            console.log(payload.data)
             return{
                 ...state,
-                streams: payload.data
+                streams: payload.data,
+                twitch_id: payload.data.twitch_id
             }
         default: return state;
     }
