@@ -27,7 +27,7 @@
 
 .chat-message-cont
     // margin-left: 15px
-    margin: 10px 0 10px 50px
+    margin: 10px 0 10px 20px
     width: 90%
     @include flex-row
     word-break: break-all
@@ -62,6 +62,8 @@
 
 //media queries
 @media(max-width: 1230px)
+    .chat-message-cont
+        margin: 10px 0 10px 55px
     .chat-container
         width: 90vw
         height: 50vh
@@ -71,4 +73,6 @@
             border-radius: 4px
             height: 40%
 
-    
+@media(max-width: 670px)
+    .chat-message-cont
+        margin: 10px 0 10px 20px
