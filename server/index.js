@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const massive = require('massive');
 const session = require('express-session');
-const server = require('http').Server(app);
+const server = require('http').createServer(app);
 const sockets = require('socket.io');
 const io = sockets(server);
 

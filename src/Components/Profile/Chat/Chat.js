@@ -10,7 +10,7 @@ function Chat(props) {
 
 
   React.useEffect(() => {
-    setSocket(io("http://localhost:4000"));
+    setSocket(io());
   }, []);
 
   React.useEffect(() => {
