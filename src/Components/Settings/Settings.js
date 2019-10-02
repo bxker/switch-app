@@ -100,7 +100,7 @@ class Settings extends Component {
                         <button onClick={this.handleAddTwitchUsername}>Submit</button>
                     </div>
                     <div className='div-3'>
-                        <h2>Add/Update Twitch Username:</h2>
+                        <h2>Update Twitch Username:</h2>
                         <input
                             name="twitch_username"
                             onChange={this.handleChange}
