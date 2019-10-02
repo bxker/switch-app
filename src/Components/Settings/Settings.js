@@ -91,14 +91,14 @@ class Settings extends Component {
                         ></input>
                         <button onClick={this.handleUpdateStreamTitle}>Submit</button>
                     </div>
-                    {/* <div className="div-2">
+                    <div className="div-2">
                         <h2>Add Twitch Username:</h2>
                         <input
                             name="twitch_username"
                             onChange={this.handleChange}
                         ></input>
                         <button onClick={this.handleAddTwitchUsername}>Submit</button>
-                    </div> */}
+                    </div>
                     <div className='div-3'>
                         <h2>Add/Update Twitch Username:</h2>
                         <input
