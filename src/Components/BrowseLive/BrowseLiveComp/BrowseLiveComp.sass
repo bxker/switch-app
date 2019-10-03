@@ -1,0 +1,20 @@
+.stream-box
+    display: flex
+    height: 100%
+    flex-direction: column
+    justify-content: space-evenly
+    
+#live-status
+    color: red
+    span
+        animation: blinkingDot 1.8s infinite
+        @keyframes blinkingDot 
+            0%
+                color: red
+            50%
+                opacity: .1
+            100%
+                color: red
+
+#not-live-status
+    color: grey

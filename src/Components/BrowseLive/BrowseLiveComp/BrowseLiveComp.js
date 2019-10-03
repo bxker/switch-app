@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 import {client_id} from '../../../secret';
+import './BrowseLiveComp.sass';
 
 
 
@@ -33,8 +34,8 @@ export default class BrowseLiveComp extends Component {
 
     render() {
         return (
-            <div>
-                {!this.state.liveStatus ? <h2>Not Live</h2> : <h2>Live</h2>}
+            <div className='stream-box'>
+                {!this.state.liveStatus ? <h2 id="not-live-status">Not Live</h2> : <h2 id='live-status'> <span>&#9673;</span>Live</h2>}
                 <h1>{this.props.stream.username}</h1>
                 <div id="color-box" style={{backgroundColor: `${this.props.stream.favorite_color}`}}><h2>{this.props.stream.stream_title}</h2></div>
             </div>

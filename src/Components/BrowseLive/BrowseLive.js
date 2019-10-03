@@ -21,7 +21,7 @@ class BrowseLive extends Component {
                 
             return (
                 <div key={i} className="streams">
-                    <Link to={`/${stream.username}`} style={{textDecoration: 'none'}}>
+                    <Link to={`/${stream.username}`} style={{textDecoration: 'none', height: '100%'}}>
                         <BrowseLiveComp stream={stream}/>
                     </Link>
                 </div>

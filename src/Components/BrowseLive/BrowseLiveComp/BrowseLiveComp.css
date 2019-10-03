@@ -1,0 +1,51 @@
+.stream-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#live-status {
+  color: red;
+}
+
+#live-status span {
+  -webkit-animation: blinkingDot 1.8s infinite;
+          animation: blinkingDot 1.8s infinite;
+}
+
+@-webkit-keyframes blinkingDot {
+  0% {
+    color: red;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes blinkingDot {
+  0% {
+    color: red;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    color: red;
+  }
+}
+
+#not-live-status {
+  color: grey;
+}
+/*# sourceMappingURL=BrowseLiveComp.css.map */
