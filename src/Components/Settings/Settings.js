@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 import './Settings.sass';
 import {connect} from 'react-redux';
-import {getSession, updateUsername, updateStreamTitle, addTwitchUsername, updateTwitchUsername, updateFavoriteColor, deleteAccount} from '../../redux/reducers/userReducer';
+import {loginUser, getSession, updateUsername, updateStreamTitle, addTwitchUsername, updateTwitchUsername, updateFavoriteColor, deleteAccount} from '../../redux/reducers/userReducer';
 
 class Settings extends Component {
     constructor(){
         super();
         this.state = {
-            username: '',
+            username: null,
             stream_title: '',
             twitch_username: '',
             favorite_color: ''
         }
     }
+
     componentDidMount(){
-        this.props.getSession();
+        this.props.getSession(this.state.username);
     }
+
     handleUpdateUsername = () => {
         const {username} = this.state;
-        const {updateUsername} = this.props;
+        const {updateUsername, getSession} = this.props;
         updateUsername({username});
         alert(`Username Updated to ${username}`);
+        getSession(username)
     }
 
     handleUpdateStreamTitle = () => {
@@ -143,5 +146,6 @@ export default connect(mapStateToProps, {
     addTwitchUsername,
     updateTwitchUsername,
     updateFavoriteColor,
-    deleteAccount
+    deleteAccount,
+    loginUser
 })(Settings)

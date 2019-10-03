@@ -26,10 +26,10 @@ const UPDATE_FAVORITE_COLOR = "UPDATE_FAVORITE_COLOR";
 const DELETE_ACCOUNT = "DELETE_ACCOUNT";
 
 //functions
-export function getSession() {
+export function getSession(username) {
   return {
     type: GET_SESSION,
-    payload: axios.get("/auth/user")
+    payload: axios.get(`/auth/user?username=${username}`)
   };
 }
 

@@ -14,7 +14,7 @@ class Profile extends Component {
       }
     }
     componentDidMount() {
-      this.props.getSession();
+      this.props.getSession('null');
       Axios.get(`/api/stream/${this.props.match.params.username}`)
       .then(res => {
         console.log(res.data)

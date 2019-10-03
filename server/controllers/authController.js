@@ -1,10 +1,33 @@
 const bcrypt = require('bcryptjs');
 
-const getUser = (req, res) => {
-    if(req.session.user){
-        res.status(200).json(req.session.user);
-    }
+const getUser = async (req, res) => {
+    const db = req.app.get('db');
+    const {username} = req.query;
+    const {user_id} = req.session.user;
+    console.log(username)
+    console.log(user_id)
+    
+    if(username !== 'null'){
+        const updatedUser = await db.auth.updateUsername(username, user_id);
+        const foundUserTwitchStream = await db.streams.checkTwitchandTitle();
+        req.session.user = {
+            first_name: updatedUser[0].first_name,
+            last_name: updatedUser[0].last_name,
+            email: updatedUser[0].email,
+            user_id: updatedUser[0].user_id,
+            username: updatedUser[0].username,
+            favorite_color: updatedUser[0].favorite_color,
+            twitch_username: foundUserTwitchStream[0].twitch_username,
+            stream_title: foundUserTwitchStream[0].stream_title
+        }
+            res.status(200).json(req.session.user);
+        }else{
+            res.status(200).json(req.session.user);
+        }
+    
 }
+
+
 const register = async (req, res) => {
     const db = req.app.get('db');
     const {username, password, first_name, last_name, email, favorite_color} = req.body;
