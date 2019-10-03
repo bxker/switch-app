@@ -17,7 +17,6 @@ class Profile extends Component {
       this.props.getSession('null');
       Axios.get(`/api/stream/${this.props.match.params.username}`)
       .then(res => {
-        console.log(res.data)
         this.setState({
           currentStream: res.data
         })
@@ -31,7 +30,6 @@ class Profile extends Component {
       }else if(prevProps.match.params.username !== this.props.match.params.username){
         Axios.get(`/api/stream/${this.props.match.params.username}`, updatedParam)
         .then(res => {
-          console.log(res.data)
           this.setState({
             currentStream: res.data
           })
@@ -41,7 +39,6 @@ class Profile extends Component {
     }
     
     render() {
-      console.log(this.props.username)
       return (
         <div className="profile-main">
           <div className="profile-section-1">

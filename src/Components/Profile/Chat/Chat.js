@@ -20,8 +20,14 @@ function Chat(props) {
   if (socket) {
     socket.on(
       "newMessage",
-      data => console.log("new messages") || setMessages(data.messages)
+      data => updateData(data)
     );
+  }
+
+  const updateData = data => {
+    if(props.profile === data.profile){
+      setMessages(data.messages)
+    }
   }
 
   return (
