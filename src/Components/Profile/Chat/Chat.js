@@ -4,6 +4,7 @@ import './Chat.sass';
 // import EmojiPicker from 'emoji-picker-react';
 // import utf8 from 'utf8';
 import {Picker} from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css'
 
 
 function Chat(props) {
@@ -69,18 +70,18 @@ console.log(userMessage)
             </div>
           ))}
         </ul>
-      <form className="input-send">
-        <input placeholder={"Enter message"} value={'' || `${userMessage}`} onChange={e => setUserMessage(e.target.value)} />
-        <span className="emoji-picker">
+        <span>
         {!emojiSwitch ?
-          <span style={{cursor: 'pointer'}} onClick={handleEmojiSwitch}>&#128512;</span>
+          <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitch}>&#128512;</span>
           :
-            <Picker style={{backgroundColor: 'white', height: '250px', width: '300px', overflow: 'scroll', position: 'absolute', bottom: '160px', right: '2%'}} onSelect={(e) => {
+            <Picker style={{position: 'absolute', bottom: '220px', right: '150px'}} onSelect={(e) => {
               handleEmoji(e)
               handleEmojiSwitchFalse()
             }}/>
           }
           </span>
+      <form className="input-send">
+        <input placeholder={"Enter message"} value={'' || `${userMessage}`} onChange={e => setUserMessage(e.target.value)} />
         <button
           className="send-message"
           onClick={(e) => {
