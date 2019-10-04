@@ -70,7 +70,8 @@ console.log(userMessage)
             </div>
           ))}
         </ul>
-        <div>
+      <form className="input-send">
+        <input placeholder={"Enter message"} value={'' || `${userMessage}`} onChange={e => setUserMessage(e.target.value)} />
         {!emojiSwitch ?
           <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitch}>&#128512;</span>
           :
@@ -79,9 +80,6 @@ console.log(userMessage)
               handleEmojiSwitchFalse()
             }}/>
           }
-          </div>
-      <form className="input-send">
-        <input placeholder={"Enter message"} value={'' || `${userMessage}`} onChange={e => setUserMessage(e.target.value)} />
         <button
           className="send-message"
           onClick={(e) => {
@@ -93,7 +91,7 @@ console.log(userMessage)
             });
           }}
         >
-          Send Message
+          SEND
         </button>
       </form>
     </div>
