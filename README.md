@@ -1,7 +1,10 @@
 ## Switch App
 This application was created as my personal project for Devmountain.  
+
 Live version of the application - https://switchapp.xyz  
+
 Demo account details - Username: banana | Password: password   
+
 *please do not change account details :D*
 
 ## What is Switch?
