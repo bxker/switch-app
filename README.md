@@ -16,6 +16,6 @@ This application was created as my personal project for Devmountain.
 
 + SASS
 
-+ DigitalOcean
++ DigitalOcean - Hosting
 
 
