@@ -11,6 +11,7 @@ This application was created as my personal project for Devmountain.
   + Express
   + Websockets - Socket.io
   + Twitch API
+  + Emoji Mart
   
 + HTML
 
