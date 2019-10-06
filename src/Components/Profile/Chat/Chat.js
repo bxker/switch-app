@@ -70,7 +70,7 @@ function Chat(props) {
       <form className="input-send">
         <input placeholder={"Enter message"} value={'' || `${userMessage}`} onChange={e => setUserMessage(e.target.value)} />
         {!emojiSwitch ?
-          <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitch}>&#128512;</span>
+          <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitch} role="img" aria-label="emoji">&#128512;</span>
           :
             <Picker style={{position: 'absolute', bottom: '220px', right: '150px'}} onSelect={(e) => {
               handleEmoji(e)
