@@ -20,13 +20,8 @@ export default class BrowseLiveComp extends Component {
                 }
             }).then(res => {
                 if(res.data.data[0]){
-                    // return(
-                    //     <h1>Live</h1> 
-                    // )
-                    console.log(` is live`)
                     this.setState({liveStatus: true}) 
                 }else{
-                    console.log(` is not live`)
                     this.setState({liveStatus: false}) 
                 }
             })

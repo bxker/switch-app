@@ -4,8 +4,6 @@ const getUser = async (req, res) => {
     const db = req.app.get('db');
     const {username} = req.query;
     const {user_id} = req.session.user;
-    console.log(username)
-    console.log(user_id)
     
     if(username !== 'null'){
         const updatedUser = await db.auth.updateUsername(username, user_id);

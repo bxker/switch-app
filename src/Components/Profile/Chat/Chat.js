@@ -45,12 +45,9 @@ function Chat(props) {
   }
 
   const handleEmoji = (e) => {
-    console.log(e)
     let emoji = e.native;
     setUserMessage(userMessage + emoji)
   }
-
-console.log(userMessage)
 
   return (
     <div className="chat-container">

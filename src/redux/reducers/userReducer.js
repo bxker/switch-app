@@ -34,7 +34,6 @@ export function getSession(username) {
 }
 
 export function registerUser(newUser) {
-  console.log(newUser);
   return {
     type: REGISTER_USER,
     payload: axios.post("/auth/register", newUser)
@@ -99,7 +98,6 @@ export function updateFavoriteColor(color) {
 }
 
 export function deleteAccount() {
-  console.log("hit");
   return {
     type: DELETE_ACCOUNT,
     payload: axios.delete("/auth/settings/user")
@@ -184,7 +182,6 @@ export default function reducer(state = initialState, action) {
         favorite_color: payload.data.favorite_color
       };
     case `${DELETE_ACCOUNT}_FULFILLED`:
-      console.log("hit");
       return {
         ...state,
         user_id: null,

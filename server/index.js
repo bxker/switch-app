@@ -71,10 +71,9 @@ io.on("connection", socket => {
     
 
     socket.on("messageSend", data => {
-        console.log(data)
         const {username, message, profile} = data;
-        console.log(messages)
         let profileIndex = messages.findIndex(val => val.profile === profile); 
+        
         if(profileIndex === -1) {
             messages.push({
                 profile,
@@ -86,7 +85,7 @@ io.on("connection", socket => {
             username,
             message
         }); 
-        console.log(messages[profileIndex])
+
         io.emit("newMessage", {
             profile,
             messages: messages[profileIndex].messages
@@ -94,5 +93,4 @@ io.on("connection", socket => {
     })
 })
 
-server.listen(SERVER_PORT);
-// app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
+server.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}.`));

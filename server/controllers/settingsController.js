@@ -33,16 +33,14 @@ const addTwitchUsername = async (req, res) => {
 const updateTwitchUsername = (req, res) => {
     const db = req.app.get('db');
     const {twitch_username} = req.body;
-    console.log(process.env.client_id)
+
     axios.get(`https://api.twitch.tv/helix/users?login=${twitch_username}`, {
         headers: {
             "Client-ID": process.env.client_id
         }
     })
     .then(async response => {
-        console.log(response.data.data)
         let twitch_id = +response.data.data[0].id
-        console.log(twitch_id)
         const {user_id} = req.session.user;
         const updatedUser = await db.settings.updateTwitchUsername(twitch_username, user_id, twitch_id);
         res.status(200).json(updatedUser[0]);

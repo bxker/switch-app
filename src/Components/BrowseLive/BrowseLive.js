@@ -15,10 +15,6 @@ class BrowseLive extends Component {
 
     render() {
         const streamsMapped = this.props.streams.map((stream, i) => {
-
-            console.log(stream.twitch_id)
-            
-                
             return (
                 <div key={i} className="streams">
                     <Link to={`/${stream.username}`} style={{textDecoration: 'none', height: '100%'}}>
