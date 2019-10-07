@@ -16,6 +16,7 @@ Switch is a psuedo-Twitch clone that is geared towards developers. To get starte
   + Redux
   + Node
   + Express
+  + Bcrypt
   + Websockets - Socket.io
   + Twitch API
   + Emoji Mart
