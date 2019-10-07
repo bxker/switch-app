@@ -34,6 +34,7 @@ function Chat(props) {
   const updateData = data => {
     if(props.profile === data.profile){
       setMessages(data.messages)
+      setUserMessage("")
     }
   }
 
@@ -72,10 +73,13 @@ function Chat(props) {
         {!emojiSwitch ?
           <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitch} role="img" aria-label="emoji">&#128512;</span>
           :
+          <>
+          <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitchFalse} role="img" aria-label="emoji">&#128512;</span>
             <Picker style={{position: 'absolute', bottom: '220px', right: '150px'}} onSelect={(e) => {
               handleEmoji(e)
               handleEmojiSwitchFalse()
             }}/>
+          </>
           }
         <button
           className="send-message"
