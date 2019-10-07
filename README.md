@@ -11,15 +11,14 @@ Demo account details - Username: banana | Password: password
 Switch is a psuedo-Twitch clone that is geared towards developers. The premise it to have a central location for development streams, similar to Twitch's tag system, where developer streams currently live. If you are curious about Switch, and you don't want to create an account, try logging in with the demo account details listed above!
 
 ## Technologies Used
-+ JavaScript
-  + React
-  + Redux
-  + Node
-  + Express
-  + Bcrypt
-  + Websockets - Socket.io
-  + Twitch API
-  + Emoji Mart
++ React
++ Redux
++ Node
++ Express
++ Bcrypt
++ Websockets - Socket.io
++ Twitch API
++ Emoji Mart
   
 + HTML
 
