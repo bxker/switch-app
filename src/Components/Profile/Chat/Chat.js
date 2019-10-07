@@ -75,7 +75,7 @@ function Chat(props) {
           :
           <>
           <span className="emoji-picker" style={{cursor: 'pointer'}} onClick={handleEmojiSwitchFalse} role="img" aria-label="emoji">&#128512;</span>
-            <Picker style={{position: 'absolute', bottom: '220px', right: '150px'}} onSelect={(e) => {
+            <Picker style={{position: 'fixed', bottom: '20%', right: '10%'}} onSelect={(e) => {
               handleEmoji(e)
               handleEmojiSwitchFalse()
             }}/>
