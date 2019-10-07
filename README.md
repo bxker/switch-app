@@ -25,6 +25,8 @@ Switch is a psuedo-Twitch clone that is geared towards developers. The premise i
 
 + SASS
 
++ PostgreSQL
+
 + DigitalOcean - Hosting
 
 
