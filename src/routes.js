@@ -16,5 +16,8 @@ export default (
         <Route path="/browse" component={BrowseLive} />
         <Route path="/user/settings" component={Settings} />
         <Route path="/:username" component={Profile}/>
+        <Route render={() => {
+            return <h1>404 Not Found</h1>
+        }}/>
     </Switch>
 )
