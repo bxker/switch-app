@@ -16,7 +16,6 @@ class BrowseLive extends Component {
     
 
     render() {
-        console.log(this.props.streams)
         const streamsMapped = this.props.streams.map((stream, i) => {
             return (
                 <div key={i} className="streams">
