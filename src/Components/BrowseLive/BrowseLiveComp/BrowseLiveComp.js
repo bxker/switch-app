@@ -13,6 +13,20 @@ export default class BrowseLiveComp extends Component {
         }
     }
 
+    componentDidMount(){
+        Axios.get(`https://api.twitch.tv/helix/streams?user_id=${this.props.stream.twitch_id}`, {
+            headers: {
+                "Client-ID": client_id
+            }
+        }).then(res => {
+            if(res.data.data[0]){
+                this.setState({liveStatus: true}) 
+            }else{
+                this.setState({liveStatus: false}) 
+            }
+        })
+    }
+
     componentDidUpdate(prevProps){
         if(prevProps.stream.twitch_id !== this.props.stream.twitch_id){
             Axios.get(`https://api.twitch.tv/helix/streams?user_id=${this.props.stream.twitch_id}`, {
