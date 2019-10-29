@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
-import {client_id} from '../../../secret';
+// import {client_id} from '../../../secret';
 import './BrowseLiveComp.sass';
 
 
@@ -16,7 +16,7 @@ export default class BrowseLiveComp extends Component {
     componentDidMount(){
         Axios.get(`https://api.twitch.tv/helix/streams?user_id=${this.props.stream.twitch_id}`, {
             headers: {
-                "Client-ID": client_id
+                "Client-ID": `${process.env.REACT_APP_client_id}`
             }
         }).then(res => {
             if(res.data.data[0]){
@@ -31,7 +31,7 @@ export default class BrowseLiveComp extends Component {
         if(prevProps.stream.twitch_id !== this.props.stream.twitch_id){
             Axios.get(`https://api.twitch.tv/helix/streams?user_id=${this.props.stream.twitch_id}`, {
                     headers: {
-                        "Client-ID": client_id
+                        "Client-ID": `${process.env.REACT_APP_client_id}`
                     }
                 }).then(res => {
                     if(res.data.data[0]){
