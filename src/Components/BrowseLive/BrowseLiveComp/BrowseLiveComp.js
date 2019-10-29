@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Axios from 'axios';
 // import {client_id} from '../../../secret';
 import './BrowseLiveComp.sass';
+require('dotenv').config()
 
 
 
