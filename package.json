@@ -10,7 +10,7 @@
     "dotenv": "^8.1.0",
     "emoji-mart": "^2.11.1",
     "emoji-picker-react": "^2.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.16.2",
     "massive": "^6.1.0",
     "react": "^16.9.0",
